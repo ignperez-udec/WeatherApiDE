@@ -1,0 +1,103 @@
+#########################
+# PYTHON
+#########################
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+.eggs/
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+
+#########################
+# ENV FILES / SECRETS
+#########################
+.env
+*.env
+.env.*
+credentials.json
+secret.json
+
+#########################
+# JUPYTER
+#########################
+.ipynb_checkpoints/
+
+#########################
+# AIRFLOW
+#########################
+airflow/airflow.db
+airflow/webserver_config.py
+airflow/logs/
+airflow/plugins/__pycache__/
+
+# Evita sincronizar DAGS compilados
+airflow/dags/__pycache__/
+
+#########################
+# DOCKER
+#########################
+docker-compose.override.yml
+docker_data/
+*.pid
+
+# Volúmenes persistentes
+pgdata/
+metabase_data/
+airflow_pgdata/
+
+#########################
+# POSTGRES / DATABASES
+#########################
+*.db
+*.sqlite
+*.sql
+*.dump
+
+#########################
+# METABASE
+#########################
+metabase-data/
+metabase.db
+
+#########################
+# DATA (Brz / Slv / Gld)
+#########################
+data/**/*.parquet
+data/**/*.csv
+data/**/*.json
+!weather_historical*.parquet
+
+#########################
+# LOGS
+#########################
+*.log
+logs/
+log/
+*.out
+
+#########################
+# OS SYSTEM FILES
+#########################
+.DS_Store
+Thumbs.db
+
+#########################
+# IDE CONFIG FILES
+#########################
+.vscode/
+.idea/
+*.code-workspace
+
+#########################
+# MISC
+#########################
+*.tmp
+tmp/
