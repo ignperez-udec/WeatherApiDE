@@ -78,6 +78,7 @@ with DAG(
     on_success_callback=notify_success,
     catchup=False,
     max_active_runs=1,
+    is_paused_upon_creation=False
 ) as dag:
 
     extract_last_date_task = PythonOperator(

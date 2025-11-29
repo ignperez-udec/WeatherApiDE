@@ -98,7 +98,7 @@ services:
     environment:
       POSTGRES_USER: ${AIRFLOW_DB_USER}
       POSTGRES_PASSWORD: ${AIRFLOW_DB_PASSWORD}
-      POSTGRES_DB: ${AIRFLOW_DB}
+      POSTGRES_DB: ${AIRFLOW_DB_HOST}
     volumes:
       - airflow_pgdata:/var/lib/postgresql/data
 
@@ -110,14 +110,15 @@ services:
     image: apache/airflow:2.10.1
     container_name: airflow
     depends_on:
-      - airflow_db    
+      - airflow_db
+      - python
     env_file:
       - .env
     environment:
       AIRFLOW_HOME: /opt/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: ${AIRFLOW__DATABASE__SQL_ALCHEMY_CONN}
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: "postgresql+psycopg2://${AIRFLOW_DB_USER}:${AIRFLOW_DB_PASSWORD}@${AIRFLOW_DB_HOST}:${AIRFLOW_DB_PORT}/${AIRFLOW_DB_NAME}"
       AIRFLOW__EMAIL__EMAIL_BACKEND: airflow.utils.email.send_email_smtp
       AIRFLOW__SMTP__SMTP_HOST: smtp.gmail.com
       AIRFLOW__SMTP__SMTP_PORT: 587
@@ -135,7 +136,7 @@ services:
     command: >
       bash -c "
         echo 'Waiting for Postgres...';
-        while ! nc -z airflow_db 5432; do
+        while ! nc -z "${AIRFLOW_DB_HOST}" "${AIRFLOW_DB_PORT}"; do
           sleep 2;
         done;
 
@@ -143,7 +144,7 @@ services:
         airflow db migrate;
 
         echo 'Creating admin user (idempotent)...';
-        airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com || true;
+        airflow users create --username "${AIRFLOW_ADMIN_USERNAME}" --password "${AIRFLOW_ADMIN_PASSWORD}" --firstname "${AIRFLOW_ADMIN_FIRSTNAME}" --lastname "${AIRFLOW_ADMIN_LASTNAME}" --role Admin --email "${AIRFLOW_ADMIN_EMAIL}" || true;
 
         echo 'Starting scheduler & webserver';
         airflow scheduler & 
