@@ -49,7 +49,7 @@ def load_locations_to_db(path_parquet: str):  # type: ignore
     locations['latitude'] = locations['latitude'].apply(dms_string_to_decimal)
     locations['longitude'] = locations['longitude'].apply(dms_string_to_decimal)
 
-    engine = create_engine_db()
+    engine = create_engine_db('silver')
 
     metadata = MetaData()
     locations_table = Table(

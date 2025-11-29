@@ -5,7 +5,7 @@ from create_engine_db import create_engine_db  # type: ignore
 from config import load_variables  # type: ignore
 
 def read_weather_from_db() -> pd.DataFrame:
-    engine = create_engine_db()
+    engine = create_engine_db('silver')
 
     CONFIG_VARS = load_variables()
 

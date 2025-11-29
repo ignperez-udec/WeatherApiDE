@@ -3,20 +3,37 @@ version: "3.9"
 services:
 
   # ---------------------------------
-  # PRINCIPAL DATABASE (DATAWAREHOUSE)
+  # DATABASES (SILVER AND GOLD)
   # ---------------------------------
 
-  weather_db:
+  silver_db:
     image: postgres:15
-    container_name: weather_db
+    container_name: silver_db
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${SILVER_DB_USER}
+      POSTGRES_PASSWORD: ${SILVER_DB_PASSWORD}
+      POSTGRES_DB: ${SILVER_DB_NAME}
     ports:
-      - "${DB_PORT}:5432"
+      - "${SILVER_DB_PORT}:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata_silver:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  gold_db:
+    image: postgres:15
+    container_name: gold_db
+    environment:
+      POSTGRES_USER: ${GOLD_DB_USER}
+      POSTGRES_PASSWORD: ${GOLD_DB_PASSWORD}
+      POSTGRES_DB: ${GOLD_DB_NAME}
+    ports:
+      - "${GOLD_DB_PORT}:5432"
+    volumes:
+      - pgdata_gold:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
       interval: 5s
@@ -33,7 +50,7 @@ services:
       dockerfile: python/Dockerfile
     container_name: python
     depends_on:
-      - weather_db
+      - silver_db
     working_dir: /WeatherApiDE
     volumes:
       - ./src:/WeatherApiDE/src
@@ -154,6 +171,7 @@ services:
       - "8080:8080"
 
 volumes:
-  pgdata:
+  pgdata_silver:
+  pgdata_gold:
   metabase_data:
   airflow_pgdata:

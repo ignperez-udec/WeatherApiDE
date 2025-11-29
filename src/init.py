@@ -25,28 +25,3 @@ if __name__ == "__main__":
     #Silver Layer
     print('Loading historical weather data to database...')
     load_weather_to_db(weather_hist_list_path)
-
-
-"""     #Bronce ETL Process
-    print('Extracting comunas data from wikipedia...')
-    comunas_wiki = extract_comunas(url)
-    print('Comunas data extracted successfully:')
-
-    print('Creating database engine...')
-    engine = create_engine_db()
-
-    print('Loading comunas data to database...')
-    load_comunas_to_db(engine, comunas_wiki)
-    print('Comunas data loaded to database successfully.')
-
-    print('Reading comunas data back from database for verification...')
-    comunas_df = read_comunas_from_db(engine)
-    print('Comunas data read successfully:')
-
-    print('Getting historical weather data for comunas...')
-    weather_hist = get_historical_weather(comunas_df.to_dict(orient='records'))
-    print('Historical weather data retrieval complete.')
-
-    print('Loading historical weather data to database...')
-    load_weather_hist_to_db(engine, weather_hist)
-    print('Historical weather data loaded to database successfully.') """

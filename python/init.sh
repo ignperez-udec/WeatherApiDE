@@ -2,14 +2,19 @@
 
 set -e
 
-echo "Waiting for weather_db to be ready..."
+echo "Waiting for databases to be ready..."
 
-until pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER"; do
-  echo "weather_db is not ready yet. Waiting..."
+until pg_isready -h "$SILVER_DB_HOST" -p 5432 -U "$SILVER_DB_USER"; do
+  echo "${SILVER_DB_NAME} is not ready yet. Waiting..."
   sleep 5
 done
 
-echo "weather_db is ready."
+until pg_isready -h "$GOLD_DB_HOST" -p 5432 -U "$GOLD_DB_USER"; do
+  echo "${GOLD_DB_NAME} is not ready yet. Waiting..."
+  sleep 5
+done
+
+echo "databases are ready."
 
 echo "Running init.py script..."
 python -u src/init.py

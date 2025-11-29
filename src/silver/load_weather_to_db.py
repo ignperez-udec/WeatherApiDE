@@ -54,7 +54,7 @@ def load_weather_to_db(path_list: list[dict]):  # type: ignore
         location_weather_hist['sunrise'] = pd.to_datetime(location_weather_hist['sunrise'], format='%Y-%m-%dT%H:%M')
         location_weather_hist['sunset'] = pd.to_datetime(location_weather_hist['sunset'], format='%Y-%m-%dT%H:%M')
 
-        engine = create_engine_db()
+        engine = create_engine_db('silver')
 
         metadata = MetaData()
         weather_hist_table = Table(
