@@ -2,8 +2,13 @@ import requests
 import os
 import datetime
 from time import sleep
-import pandas as pd # type: ignore
-from config import load_variables  # type: ignore
+import json
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from utils.config import load_variables
 
 BASE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DAILY_PARAMS = "weather_code,temperature_2m_mean,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,rain_sum," \
@@ -29,13 +34,12 @@ def get_historical_weather(locations: list[dict]) -> list[dict]:
 	for i in range(len(locations)):
 		print('\tExtracting historical data for location:', locations[i]['location'])
 
-		path_parquet = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_historical_' + str(locations[i]['cod_location']) + '.parquet')
+		path_json = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_historical_' + str(locations[i]['cod_location']) + '.json')
 
 		if search_data_in_files(locations[i]['cod_location']):
 			print('\t\tData already extracted. Skipping...')
 			path_list.append({
-				'path_parquet': path_parquet, 
-				'location': locations[i]['location'],
+				'path_json': path_json,
 				'cod_location': locations[i]['cod_location']
 			})
 			continue
@@ -51,21 +55,19 @@ def get_historical_weather(locations: list[dict]) -> list[dict]:
 
 		try:
 			response = requests.get(BASE_URL, params=params)
-			data = response.json()
-			df = pd.DataFrame(data['daily'])
+			out = response.json()
+			data = out['daily']
 		except:
 			print('\t\tError extracting data for location:', locations[i]['location'])
-			print('\t\t' + data['reason'])
+			print('\t\t' + out['reason'])
 			break
 
-		df.to_parquet(path_parquet, 
-				index=False, 
-				compression='snappy')
+		with open(path_json, 'w') as f:
+			json.dump(data, f, indent=4)
 		
 		path_list.append({
-			'cod_location': locations[i]['cod_location'],
-			'location': locations[i]['location'],
-			'path_parquet': path_parquet, 
+			'path_json': path_json,
+			'cod_location': locations[i]['cod_location'] 
 		})
 
 		sleep(30)
@@ -82,7 +84,7 @@ def get_daily_weather(locations: list[dict], last_date: datetime.date) -> list[d
 
 		print('\tExtracting daily data for location:', locations[i]['location'])
 
-		path_parquet = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_daily_' + str(locations[i]['cod_location']) + '_' + last_date.strftime('%Y-%m-%d') + '.parquet')
+		path_json = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_daily_' + str(locations[i]['cod_location']) + '_' + last_date.strftime('%Y-%m-%d') + '.json')
 
 		params = {
 			"latitude": locations[i]['latitude'],
@@ -94,21 +96,19 @@ def get_daily_weather(locations: list[dict], last_date: datetime.date) -> list[d
 
 		try:
 			response = requests.get(BASE_URL, params=params)
-			data = response.json()
-			df = pd.DataFrame(data['daily'])
+			out = response.json()
+			data = out['daily']
 		except:
 			print('\t\tError extracting data for location:', locations[i]['location'])
-			print('\t\t' + data['reason'])
+			print('\t\t' + out['reason'])
 			break
 
-		df.to_parquet(path_parquet, 
-				index=False, 
-				compression='snappy')
+		with open(path_json, 'w') as f:
+			json.dump(data, f, indent=4)
 		
 		path_list.append({
-			'cod_location': locations[i]['cod_location'],
-			'location': locations[i]['location'],
-			'path_parquet': path_parquet, 
+			'path_json': path_json,
+			'cod_location': locations[i]['cod_location']
 		})
 
 		sleep(30)

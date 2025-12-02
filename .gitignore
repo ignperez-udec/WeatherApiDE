@@ -38,8 +38,6 @@ airflow/airflow.db
 airflow/webserver_config.py
 airflow/logs/
 airflow/plugins/__pycache__/
-
-# Evita sincronizar DAGS compilados
 airflow/dags/__pycache__/
 
 #########################
@@ -74,7 +72,7 @@ metabase.db
 data/**/*.parquet
 data/**/*.csv
 data/**/*.json
-!weather_historical*.parquet
+!weather_historical*.json
 
 #########################
 # LOGS

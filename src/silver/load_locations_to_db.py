@@ -1,8 +1,13 @@
 import pandas as pd # type: ignore
 import re
 from typing import Tuple
-from create_engine_db import create_engine_db  # type: ignore
 from sqlalchemy import MetaData, Table, Column, String, Float, BigInteger # type: ignore
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from utils.create_engine_db import create_engine_db  # type: ignore
 
 def parse_dms_string(dms: str) -> Tuple[float, float, float, str | None]:
     s = dms.strip()

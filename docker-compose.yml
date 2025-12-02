@@ -41,6 +41,16 @@ services:
       retries: 10
 
   # ---------------------------------
+  # CHROME SERVICE
+  # ---------------------------------
+
+  chrome:
+    image: selenium/standalone-chrome:4.0.0
+    container_name: chrome
+    ports:
+      - "4444:4444"
+
+  # ---------------------------------
   # PYTHON SERVICE
   # ---------------------------------
 
@@ -51,6 +61,8 @@ services:
     container_name: python
     depends_on:
       - silver_db
+      - gold_db
+      - chrome
     working_dir: /WeatherApiDE
     volumes:
       - ./src:/WeatherApiDE/src

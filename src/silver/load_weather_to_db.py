@@ -1,8 +1,13 @@
 import pandas as pd # type: ignore
 from sqlalchemy import MetaData, Table, Column, Date, DateTime, Float, String, Integer, BigInteger, UniqueConstraint # type: ignore
-from create_engine_db import create_engine_db  # type: ignore
 from sqlalchemy.dialects.postgresql import insert as pg_insert  # type: ignore
 from sqlalchemy.engine import Engine # type: ignore
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from utils.create_engine_db import create_engine_db  # type: ignore
 
 def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):
     records = data.to_dict(orient='records')
@@ -27,9 +32,9 @@ def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):
 
 def load_weather_to_db(path_list: list[dict]):  # type: ignore
     for dict_locations in path_list:
-        print('\tReading historical weather data from parquet file:', dict_locations['path_parquet'])
+        print('\tReading historical weather data from json file:', dict_locations['path_json'])
         
-        location_weather_hist = pd.read_parquet(dict_locations['path_parquet'])
+        location_weather_hist = pd.read_json(dict_locations['path_json'])
 
         location_weather_hist.rename(columns={
             'temperature_2m_mean': 'temperature_mean',
@@ -47,7 +52,6 @@ def load_weather_to_db(path_list: list[dict]):  # type: ignore
             'wind_speed_10m_min': 'wind_speed_min'
         }, inplace=True)
 
-        location_weather_hist['location'] = dict_locations['location']
         location_weather_hist['cod_location'] = dict_locations['cod_location']
 
         location_weather_hist['time'] = pd.to_datetime(location_weather_hist['time']).dt.date
@@ -61,7 +65,6 @@ def load_weather_to_db(path_list: list[dict]):  # type: ignore
             "weather_hist",
             metadata,
             Column("cod_location", BigInteger),
-            Column("location", String),
             Column("time", Date),
             Column("weather_code", Integer),
             Column("temperature_mean", Float),

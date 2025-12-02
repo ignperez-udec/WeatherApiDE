@@ -1,8 +1,8 @@
 import os
 import pandas as pd # type: ignore
 from sqlalchemy import Table, MetaData, select # type: ignore
-from create_engine_db import create_engine_db  # type: ignore
-from config import load_variables  # type: ignore
+from utils.create_engine_db import create_engine_db  # type: ignore
+from utils.config import load_variables  # type: ignore
 
 def read_weather_from_db() -> pd.DataFrame:
     engine = create_engine_db('silver')
@@ -16,7 +16,6 @@ def read_weather_from_db() -> pd.DataFrame:
     with engine.connect() as conn:
             stmt = select(
                         weather_hist.c.cod_location,
-                        weather_hist.c.location,
                         weather_hist.c.time,
                 ).distinct(
                     weather_hist.c.cod_location
