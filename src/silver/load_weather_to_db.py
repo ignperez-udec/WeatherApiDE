@@ -4,9 +4,6 @@ from sqlalchemy.dialects.postgresql import insert as pg_insert  # type: ignore
 from sqlalchemy.engine import Engine # type: ignore
 import sys
 from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 from utils.create_engine_db import create_engine_db  # type: ignore
 
 def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):

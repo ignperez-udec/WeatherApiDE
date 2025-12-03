@@ -47,8 +47,9 @@ docker-compose.override.yml
 docker_data/
 *.pid
 
-# Volúmenes persistentes
-pgdata/
+#Volume
+pgdata_silver/
+pgdata_gold/
 metabase_data/
 airflow_pgdata/
 

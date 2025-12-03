@@ -5,9 +5,6 @@ import dateparser # type: ignore
 from sqlalchemy import MetaData, Table, Column, Integer, DateTime # type: ignore
 import sys
 from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 from utils.create_engine_db import create_engine_db  # type: ignore
 
 def load_seasons_to_db(path_txt: str):

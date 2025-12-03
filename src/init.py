@@ -5,42 +5,57 @@ from bronze.get_weather import get_historical_weather  # type: ignore
 from silver.load_weather_to_db import load_weather_to_db  # type: ignore
 from bronze.get_season import get_season  # type: ignore
 from silver.load_seasons_to_db import load_seasons_to_db  # type: ignore
+from utils.logger import config_log  # type: ignore
+import logging
+import sys
 
+#Init logger
+logger = config_log(name_log='init', level=logging.INFO)
 
+def handle_exception(exc_type, exc_value, exc_traceback):
+    if issubclass(exc_type, KeyboardInterrupt):
+        sys.__excepthook__(exc_type, exc_value, exc_traceback)
+        return
+
+    logger.critical("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
+
+sys.excepthook = handle_exception
 
 if __name__ == "__main__":
+    logger.info('Starting init...')
+
     ###LOCATIONS DATA ETL PROCESS###
     #Bronze Layer
-    print('Extracting locations data from wikipedia...')
+    logger.info('Extracting locations data from wikipedia...')
     locations_wiki_path = get_locations_wiki()
 
     #Silver Layer
-    print('Cleaning and loading locations data to database...')
+    logger.info('Cleaning and loading locations data to database...')
     load_locations_to_db(locations_wiki_path)
 
 
     ###SEASONS DATA ETL PROCESS###
     #Bronze Layer
-    print('Extracting seasons data from website...')
+    logger.info('Extracting seasons data from website...')
     seasons_path = get_season()
 
     #Silver Layer
-    print('Loading seasons data to database...')
+    logger.info('Loading seasons data to database...')
     load_seasons_to_db(seasons_path)
 
 
     ###HISTORICAL WEATHER DATA ETL PROCESS###
     #Bronze Layer
-    print('Reading locations data from database...')
+    logger.info('Reading locations data from database...')
     locations = read_locations_from_db()
 
-    print('Extracting daily historical weather data for locations...')
-    weather_hist_list_path = get_historical_weather(locations.to_dict(orient='records'))
+    logger.info('Extracting daily historical weather data for locations...')
+    weather_hist_list_path = get_historical_weather(locations.to_dict(orient='records'), logger)
 
     #Silver Layer
-    print('Loading historical weather data to database...')
+    logger.info('Loading historical weather data to database...')
     load_weather_to_db(weather_hist_list_path)
 
 
     #Finish init    
-    print('Finished!')
+    logger.info('Finished!')

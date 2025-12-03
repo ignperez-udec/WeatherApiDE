@@ -5,10 +5,9 @@ from time import sleep
 import json
 import sys
 from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 from utils.config import load_variables
+from utils.logger import config_log
+import logging
 
 BASE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DAILY_PARAMS = "weather_code,temperature_2m_mean,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,rain_sum," \
@@ -28,16 +27,16 @@ def search_data_in_files(cod_location: int) -> bool:
 	
 	return False
 
-def get_historical_weather(locations: list[dict]) -> list[dict]:
+def get_historical_weather(locations: list[dict], logger: logging.Logger) -> list[dict]:
 	path_list = []
-
+	
 	for i in range(len(locations)):
-		print('\tExtracting historical data for location:', locations[i]['location'])
+		logger.info('\tExtracting historical data for location: ' + locations[i]['location'])
 
 		path_json = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_historical_' + str(locations[i]['cod_location']) + '.json')
 
 		if search_data_in_files(locations[i]['cod_location']):
-			print('\t\tData already extracted. Skipping...')
+			logger.info('\t\tData already extracted. Skipping...')
 			path_list.append({
 				'path_json': path_json,
 				'cod_location': locations[i]['cod_location']
@@ -58,8 +57,8 @@ def get_historical_weather(locations: list[dict]) -> list[dict]:
 			out = response.json()
 			data = out['daily']
 		except:
-			print('\t\tError extracting data for location:', locations[i]['location'])
-			print('\t\t' + out['reason'])
+			logger.error('\t\tError extracting data for location: ' + locations[i]['location'])
+			logger.error('\t\t' + out['reason'])
 			break
 
 		with open(path_json, 'w') as f:
@@ -74,15 +73,15 @@ def get_historical_weather(locations: list[dict]) -> list[dict]:
 
 	return path_list
 
-def get_daily_weather(locations: list[dict], last_date: datetime.date) -> list[dict]:
+def get_daily_weather(locations: list[dict], last_date: datetime.date, logger: logging.Logger) -> list[dict]:
 	path_list = []
 
 	for i in range(len(locations)):
 		if last_date + datetime.timedelta(days=1) == datetime.datetime.now() - datetime.timedelta(days=1):
-			print('\tNo new data to extract for location:', locations[i]['location'])
+			logger.info('\tNo new data to extract for location: ' + locations[i]['location'])
 			continue
 
-		print('\tExtracting daily data for location:', locations[i]['location'])
+		logger.info('\tExtracting daily data for location:', locations[i]['location'])
 
 		path_json = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_daily_' + str(locations[i]['cod_location']) + '_' + last_date.strftime('%Y-%m-%d') + '.json')
 
@@ -99,8 +98,8 @@ def get_daily_weather(locations: list[dict], last_date: datetime.date) -> list[d
 			out = response.json()
 			data = out['daily']
 		except:
-			print('\t\tError extracting data for location:', locations[i]['location'])
-			print('\t\t' + out['reason'])
+			logger.error('\t\tError extracting data for location: ' + locations[i]['location'])
+			logger.error('\t\t' + out['reason'])
 			break
 
 		with open(path_json, 'w') as f:

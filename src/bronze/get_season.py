@@ -5,9 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC # type: ignore
 import os
 import sys
 from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 from utils.config import load_variables
 
 BASE_URL = 'https://wutools.com/es/tiempo/calendario-estaciones'

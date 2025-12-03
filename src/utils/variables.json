@@ -1,4 +1,5 @@
 {
     "DATA_BRONZE_PATH": "./data/bronze",
+    "LOG_PATH": "./src/logs",
     "API_LOCATIONS_TO_EXTRACT": "8101,2101,5101,13101,10101"
 }

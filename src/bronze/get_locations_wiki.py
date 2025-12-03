@@ -4,9 +4,6 @@ from io import StringIO
 import os
 import sys
 from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-
 from utils.config import load_variables
 
 URL = 'https://es.wikipedia.org/wiki/Anexo:Comunas_de_Chile#Tabla'
