@@ -5,11 +5,12 @@ from bronze.get_weather import get_historical_weather  # type: ignore
 from silver.load_weather_to_db import load_weather_to_db  # type: ignore
 from bronze.get_season import get_season  # type: ignore
 from silver.load_seasons_to_db import load_seasons_to_db  # type: ignore
-from utils.logger import config_log  # type: ignore
+from utils.logger import reset_log, config_log  # type: ignore
 import logging
 import sys
 
 #Init logger
+reset_log(name_log='init')
 logger = config_log(name_log='init', level=logging.INFO)
 
 def handle_exception(exc_type, exc_value, exc_traceback):
