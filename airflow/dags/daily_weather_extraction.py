@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator # type: ignore
 from datetime import datetime, timedelta
 import sys
+from datetime import datetime
 from src.email import notify_failure, notify_success
 from src.log import get_logger, log_failure_error, log_retry_error # type: ignore
 
@@ -57,7 +58,7 @@ def extract_daily_weather(**kwargs):
     last_date = ti.xcom_pull(task_ids='extract_last_date')
     locations = ti.xcom_pull(task_ids='extract_locations')
 
-    logger.info('Extracting daily weather data from last updated date: ' + last_date)
+    logger.info('Extracting daily weather data from last updated date: ' + datetime.strftime(last_date, '%Y-%m-%d'))
     weather_daily_list_path = get_daily_weather(locations, last_date, logger)
 
     if weather_daily_list_path is None or len(weather_daily_list_path) == 0:

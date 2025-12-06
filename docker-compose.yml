@@ -175,6 +175,17 @@ services:
         echo 'Creating admin user (idempotent)...';
         airflow users create --username "${AIRFLOW_ADMIN_USERNAME}" --password "${AIRFLOW_ADMIN_PASSWORD}" --firstname "${AIRFLOW_ADMIN_FIRSTNAME}" --lastname "${AIRFLOW_ADMIN_LASTNAME}" --role Admin --email "${AIRFLOW_ADMIN_EMAIL}" || true;
 
+        echo 'Waiting for init.py...';
+        while true; do
+          if [[ "$(head -n 1 /opt/airflow/src/logs/init_done)" == "DONE" ]]; then
+            break;
+          elif [[ "$(head -n 1 /opt/airflow/src/logs/init_done)" == "ERROR" ]]; then
+            echo 'Error in init.py. Check /src/logs/init.log';
+            exit 1;
+          fi;
+          sleep 10;
+        done;
+
         echo 'Starting scheduler & webserver';
         airflow scheduler & 
         exec airflow webserver
