@@ -58,9 +58,9 @@ def load_seasons_to_db(path_txt: str):
         'winter_solstice': winter_solstice
     })
 
-    engine = create_engine_db('silver')
+    engine = create_engine_db()
 
-    metadata = MetaData()
+    metadata = MetaData(schema="silver")
     seasons_table = Table(
             "seasons",
             metadata,
@@ -73,5 +73,5 @@ def load_seasons_to_db(path_txt: str):
     metadata.create_all(engine)
 
     with engine.connect() as conn:
-        seasons.to_sql("seasons", conn, if_exists="replace", index=False, method="multi", chunksize=1000)
+        seasons.to_sql("seasons", conn, schema='silver', if_exists="replace", index=False, method="multi", chunksize=1000)
         conn.commit()

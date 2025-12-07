@@ -3,42 +3,44 @@ version: "3.9"
 services:
 
   # ---------------------------------
-  # DATABASES (SILVER AND GOLD)
+  # DATABASE
   # ---------------------------------
 
-  silver_db:
+  dwh_db:
     image: postgres:15
-    container_name: silver_db
+    container_name: dwh_db
     environment:
-      POSTGRES_USER: ${SILVER_DB_USER}
-      POSTGRES_PASSWORD: ${SILVER_DB_PASSWORD}
-      POSTGRES_DB: ${SILVER_DB_NAME}
+      POSTGRES_USER: ${DWH_DB_USER}
+      POSTGRES_PASSWORD: ${DWH_DB_PASSWORD}
+      POSTGRES_DB: ${DWH_DB_NAME}
     ports:
-      - "${SILVER_DB_PORT}:5432"
+      - "5432:${DWH_DB_PORT}"
     volumes:
-      - pgdata_silver:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
+      - ./postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
       interval: 5s
       timeout: 5s
       retries: 10
 
-  gold_db:
-    image: postgres:15
-    container_name: gold_db
-    environment:
-      POSTGRES_USER: ${GOLD_DB_USER}
-      POSTGRES_PASSWORD: ${GOLD_DB_PASSWORD}
-      POSTGRES_DB: ${GOLD_DB_NAME}
-    ports:
-      - "${GOLD_DB_PORT}:5432"
+  # ---------------------------------
+  # DBT SERVICE
+  # ---------------------------------
+
+  dbt:
+    build: 
+      context: ./dbt
+      dockerfile: Dockerfile
+    container_name: dbt
     volumes:
-      - pgdata_gold:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      - ./dbt:/dbt
+    environment:
+      DBT_PROFILES_DIR: /dbt/profiles
+    depends_on:
+      - dwh_db
+    env_file:
+      - .env
 
   # ---------------------------------
   # CHROME SERVICE
@@ -60,8 +62,7 @@ services:
       dockerfile: python/Dockerfile
     container_name: python
     depends_on:
-      - silver_db
-      - gold_db
+      - dwh_db
       - chrome
     working_dir: /WeatherApiDE
     volumes:
@@ -194,7 +195,6 @@ services:
       - "8080:8080"
 
 volumes:
-  pgdata_silver:
-  pgdata_gold:
+  pgdata:
   metabase_data:
   airflow_pgdata:

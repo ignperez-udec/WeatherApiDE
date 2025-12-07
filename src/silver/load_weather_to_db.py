@@ -10,7 +10,7 @@ def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):
     records = data.to_dict(orient='records')
 
     metadata = MetaData()
-    weather = Table('weather_hist', metadata, autoload_with=engine)
+    weather = Table('weather_hist', metadata, schema='silver', autoload_with=engine)
     conflict_keys = ['cod_location', 'time']
 
     with engine.begin() as conn:
@@ -55,9 +55,9 @@ def load_weather_to_db(path_list: list[dict]):  # type: ignore
         location_weather_hist['sunrise'] = pd.to_datetime(location_weather_hist['sunrise'], format='%Y-%m-%dT%H:%M')
         location_weather_hist['sunset'] = pd.to_datetime(location_weather_hist['sunset'], format='%Y-%m-%dT%H:%M')
 
-        engine = create_engine_db('silver')
+        engine = create_engine_db()
 
-        metadata = MetaData()
+        metadata = MetaData(schema="silver")
         weather_hist_table = Table(
             "weather_hist",
             metadata,

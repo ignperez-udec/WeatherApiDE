@@ -51,9 +51,9 @@ def load_locations_to_db(path_parquet: str):  # type: ignore
     locations['latitude'] = locations['latitude'].apply(dms_string_to_decimal)
     locations['longitude'] = locations['longitude'].apply(dms_string_to_decimal)
 
-    engine = create_engine_db('silver')
+    engine = create_engine_db()
 
-    metadata = MetaData()
+    metadata = MetaData(schema="silver")
     locations_table = Table(
             "locations",
             metadata,
@@ -67,5 +67,5 @@ def load_locations_to_db(path_parquet: str):  # type: ignore
     metadata.create_all(engine)
 
     with engine.connect() as conn:
-        locations.to_sql("locations", conn, if_exists="replace", index=False, method="multi", chunksize=1000)
+        locations.to_sql("locations", conn, schema='silver', if_exists="replace", index=False, method="multi", chunksize=1000)
         conn.commit()

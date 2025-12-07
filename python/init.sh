@@ -2,19 +2,14 @@
 
 set -e
 
-echo "Waiting for databases to be ready..."
+echo "Waiting for database to be ready..."
 
-until pg_isready -h "$SILVER_DB_HOST" -p 5432 -U "$SILVER_DB_USER"; do
-  echo "${SILVER_DB_NAME} is not ready yet. Waiting..."
+until pg_isready -h "$DWH_DB_HOST" -p 5432 -U "$DWH_DB_USER"; do
+  echo "${DWH_DB_NAME} is not ready yet. Waiting..."
   sleep 5
 done
 
-until pg_isready -h "$GOLD_DB_HOST" -p 5432 -U "$GOLD_DB_USER"; do
-  echo "${GOLD_DB_NAME} is not ready yet. Waiting..."
-  sleep 5
-done
-
-echo "Databases are ready."
+echo "Database is ready."
 
 echo "Cleaning init flag"
 echo "" > src/logs/init_done

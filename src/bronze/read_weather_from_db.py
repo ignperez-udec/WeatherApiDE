@@ -5,14 +5,14 @@ from utils.create_engine_db import create_engine_db  # type: ignore
 from utils.config import load_variables  # type: ignore
 
 def read_weather_from_db() -> pd.DataFrame:
-    engine = create_engine_db('silver')
+    engine = create_engine_db()
 
     CONFIG_VARS = load_variables()
 
     locations_ids = [int(id.strip()) for id in CONFIG_VARS['API_LOCATIONS_TO_EXTRACT'].split(',')]
 
     metadata = MetaData()
-    weather_hist = Table('weather_hist', metadata, autoload_with=engine)
+    weather_hist = Table('weather_hist', metadata, schema='silver', autoload_with=engine)
     with engine.connect() as conn:
             stmt = select(
                         weather_hist.c.cod_location,
