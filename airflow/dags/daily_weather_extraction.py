@@ -23,20 +23,6 @@ def init_dag(**kwargs):
     logger = get_logger(name='daily_weather_etl')
     logger.info('Starting daily weather ETL process...')
 
-def extract_last_date(**kwargs):
-    logger = get_logger(name='daily_weather_etl')
-
-    logger.info('Reading weather data from database to retrieve the last updated date...')
-
-    weather = read_weather_from_db()
-
-    if weather.empty:
-        raise ValueError("No weather data found in the database.")
-
-    last_date = weather['time'].drop_duplicates()[0]
-
-    return last_date
-
 def extract_locations(**kwargs):
     logger = get_logger(name='daily_weather_etl')
 
@@ -58,8 +44,8 @@ def extract_daily_weather(**kwargs):
     last_date = ti.xcom_pull(task_ids='extract_last_date')
     locations = ti.xcom_pull(task_ids='extract_locations')
 
-    logger.info('Extracting daily weather data from last updated date: ' + datetime.strftime(last_date, '%Y-%m-%d'))
-    weather_daily_list_path = get_daily_weather(locations, last_date, logger)
+    logger.info('Extracting daily weather data from last updated date of each location...')
+    weather_daily_list_path = get_daily_weather(locations, logger)
 
     if weather_daily_list_path is None or len(weather_daily_list_path) == 0:
         raise ValueError("No daily weather data was extracted.")
@@ -128,12 +114,6 @@ with DAG(
         on_failure_callback=log_failure
     )
 
-    extract_last_date_task = PythonOperator(
-        task_id='extract_last_date',
-        python_callable=extract_last_date,
-        on_failure_callback=log_failure
-    )
-
     extract_locations_task = PythonOperator(
         task_id='extract_locations',
         python_callable=extract_locations,
@@ -158,4 +138,4 @@ with DAG(
         on_failure_callback=log_failure
     )
 
-    init_dag_task >> [extract_last_date_task, extract_locations_task] >> extract_daily_weather_task >> load_daily_weather_task >> finish_dag_task
+    init_dag_task >>  extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> finish_dag_task

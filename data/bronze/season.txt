@@ -16,3 +16,1785 @@ Equinoccio de Otoño:
 21 de marzo, 07:34
 Solsticio de Invierno:
 22 de junio, 03:31
+1902
+Equinoccio de Primavera:
+23 de septiembre, 23:58
+Solsticio de Verano:
+22 de diciembre, 18:29
+Equinoccio de Otoño:
+21 de marzo, 13:23
+Solsticio de Invierno:
+22 de junio, 09:19
+1903
+Equinoccio de Primavera:
+24 de septiembre, 05:46
+Solsticio de Verano:
+23 de diciembre, 00:19
+Equinoccio de Otoño:
+21 de marzo, 19:12
+Solsticio de Invierno:
+22 de junio, 15:07
+1904
+Equinoccio de Primavera:
+23 de septiembre, 11:35
+Solsticio de Verano:
+22 de diciembre, 06:08
+Equinoccio de Otoño:
+21 de marzo, 01:01
+Solsticio de Invierno:
+21 de junio, 20:55
+1905
+Equinoccio de Primavera:
+23 de septiembre, 17:23
+Solsticio de Verano:
+22 de diciembre, 11:58
+Equinoccio de Otoño:
+21 de marzo, 06:50
+Solsticio de Invierno:
+22 de junio, 02:43
+1906
+Equinoccio de Primavera:
+23 de septiembre, 23:12
+Solsticio de Verano:
+22 de diciembre, 17:48
+Equinoccio de Otoño:
+21 de marzo, 12:39
+Solsticio de Invierno:
+22 de junio, 08:31
+1907
+Equinoccio de Primavera:
+24 de septiembre, 05:00
+Solsticio de Verano:
+22 de diciembre, 23:37
+Equinoccio de Otoño:
+21 de marzo, 18:28
+Solsticio de Invierno:
+22 de junio, 14:19
+1908
+Equinoccio de Primavera:
+23 de septiembre, 10:49
+Solsticio de Verano:
+22 de diciembre, 05:27
+Equinoccio de Otoño:
+21 de marzo, 00:17
+Solsticio de Invierno:
+21 de junio, 20:07
+1909
+Equinoccio de Primavera:
+23 de septiembre, 16:37
+Solsticio de Verano:
+22 de diciembre, 11:16
+Equinoccio de Otoño:
+21 de marzo, 06:06
+Solsticio de Invierno:
+22 de junio, 01:55
+1910
+Equinoccio de Primavera:
+23 de septiembre, 22:26
+Solsticio de Verano:
+22 de diciembre, 17:06
+Equinoccio de Otoño:
+21 de marzo, 11:55
+Solsticio de Invierno:
+22 de junio, 07:43
+1911
+Equinoccio de Primavera:
+24 de septiembre, 04:14
+Solsticio de Verano:
+22 de diciembre, 22:55
+Equinoccio de Otoño:
+21 de marzo, 17:44
+Solsticio de Invierno:
+22 de junio, 13:31
+1912
+Equinoccio de Primavera:
+23 de septiembre, 10:03
+Solsticio de Verano:
+22 de diciembre, 04:45
+Equinoccio de Otoño:
+20 de marzo, 23:33
+Solsticio de Invierno:
+21 de junio, 19:19
+1913
+Equinoccio de Primavera:
+23 de septiembre, 15:51
+Solsticio de Verano:
+22 de diciembre, 10:35
+Equinoccio de Otoño:
+21 de marzo, 05:22
+Solsticio de Invierno:
+22 de junio, 01:07
+1914
+Equinoccio de Primavera:
+23 de septiembre, 21:40
+Solsticio de Verano:
+22 de diciembre, 16:24
+Equinoccio de Otoño:
+21 de marzo, 11:11
+Solsticio de Invierno:
+22 de junio, 06:55
+1915
+Equinoccio de Primavera:
+24 de septiembre, 03:29
+Solsticio de Verano:
+22 de diciembre, 22:14
+Equinoccio de Otoño:
+21 de marzo, 17:00
+Solsticio de Invierno:
+22 de junio, 12:42
+1916
+Equinoccio de Primavera:
+23 de septiembre, 09:17
+Solsticio de Verano:
+22 de diciembre, 04:03
+Equinoccio de Otoño:
+20 de marzo, 22:49
+Solsticio de Invierno:
+21 de junio, 18:30
+1917
+Equinoccio de Primavera:
+23 de septiembre, 15:06
+Solsticio de Verano:
+22 de diciembre, 09:53
+Equinoccio de Otoño:
+21 de marzo, 04:38
+Solsticio de Invierno:
+22 de junio, 00:18
+1918
+Equinoccio de Primavera:
+23 de septiembre, 20:54
+Solsticio de Verano:
+22 de diciembre, 15:42
+Equinoccio de Otoño:
+21 de marzo, 10:27
+Solsticio de Invierno:
+22 de junio, 06:06
+1919
+Equinoccio de Primavera:
+24 de septiembre, 02:43
+Solsticio de Verano:
+22 de diciembre, 21:32
+Equinoccio de Otoño:
+21 de marzo, 16:16
+Solsticio de Invierno:
+22 de junio, 11:54
+1920
+Equinoccio de Primavera:
+23 de septiembre, 08:31
+Solsticio de Verano:
+22 de diciembre, 03:21
+Equinoccio de Otoño:
+20 de marzo, 22:05
+Solsticio de Invierno:
+21 de junio, 17:42
+1921
+Equinoccio de Primavera:
+23 de septiembre, 14:20
+Solsticio de Verano:
+22 de diciembre, 09:11
+Equinoccio de Otoño:
+21 de marzo, 03:54
+Solsticio de Invierno:
+21 de junio, 23:30
+1922
+Equinoccio de Primavera:
+23 de septiembre, 20:08
+Solsticio de Verano:
+22 de diciembre, 15:01
+Equinoccio de Otoño:
+21 de marzo, 09:43
+Solsticio de Invierno:
+22 de junio, 05:18
+1923
+Equinoccio de Primavera:
+24 de septiembre, 01:57
+Solsticio de Verano:
+22 de diciembre, 20:50
+Equinoccio de Otoño:
+21 de marzo, 15:32
+Solsticio de Invierno:
+22 de junio, 11:06
+1924
+Equinoccio de Primavera:
+23 de septiembre, 07:45
+Solsticio de Verano:
+22 de diciembre, 02:40
+Equinoccio de Otoño:
+20 de marzo, 21:21
+Solsticio de Invierno:
+21 de junio, 16:54
+1925
+Equinoccio de Primavera:
+23 de septiembre, 13:34
+Solsticio de Verano:
+22 de diciembre, 08:29
+Equinoccio de Otoño:
+21 de marzo, 03:10
+Solsticio de Invierno:
+21 de junio, 22:42
+1926
+Equinoccio de Primavera:
+23 de septiembre, 19:22
+Solsticio de Verano:
+22 de diciembre, 14:19
+Equinoccio de Otoño:
+21 de marzo, 08:59
+Solsticio de Invierno:
+22 de junio, 04:30
+1927
+Equinoccio de Primavera:
+24 de septiembre, 01:11
+Solsticio de Verano:
+22 de diciembre, 20:08
+Equinoccio de Otoño:
+21 de marzo, 14:48
+Solsticio de Invierno:
+22 de junio, 10:18
+1928
+Equinoccio de Primavera:
+23 de septiembre, 06:59
+Solsticio de Verano:
+22 de diciembre, 01:58
+Equinoccio de Otoño:
+20 de marzo, 20:37
+Solsticio de Invierno:
+21 de junio, 16:06
+1929
+Equinoccio de Primavera:
+23 de septiembre, 12:48
+Solsticio de Verano:
+22 de diciembre, 07:47
+Equinoccio de Otoño:
+21 de marzo, 02:26
+Solsticio de Invierno:
+21 de junio, 21:54
+1930
+Equinoccio de Primavera:
+23 de septiembre, 18:36
+Solsticio de Verano:
+22 de diciembre, 13:37
+Equinoccio de Otoño:
+21 de marzo, 08:15
+Solsticio de Invierno:
+22 de junio, 03:42
+1931
+Equinoccio de Primavera:
+24 de septiembre, 00:25
+Solsticio de Verano:
+22 de diciembre, 19:27
+Equinoccio de Otoño:
+21 de marzo, 14:04
+Solsticio de Invierno:
+22 de junio, 09:30
+1932
+Equinoccio de Primavera:
+23 de septiembre, 06:14
+Solsticio de Verano:
+22 de diciembre, 01:16
+Equinoccio de Otoño:
+20 de marzo, 19:53
+Solsticio de Invierno:
+21 de junio, 15:17
+1933
+Equinoccio de Primavera:
+23 de septiembre, 12:02
+Solsticio de Verano:
+22 de diciembre, 07:06
+Equinoccio de Otoño:
+21 de marzo, 01:42
+Solsticio de Invierno:
+21 de junio, 21:05
+1934
+Equinoccio de Primavera:
+23 de septiembre, 17:51
+Solsticio de Verano:
+22 de diciembre, 12:55
+Equinoccio de Otoño:
+21 de marzo, 07:31
+Solsticio de Invierno:
+22 de junio, 02:53
+1935
+Equinoccio de Primavera:
+23 de septiembre, 23:39
+Solsticio de Verano:
+22 de diciembre, 18:45
+Equinoccio de Otoño:
+21 de marzo, 13:20
+Solsticio de Invierno:
+22 de junio, 08:41
+1936
+Equinoccio de Primavera:
+23 de septiembre, 05:28
+Solsticio de Verano:
+22 de diciembre, 00:34
+Equinoccio de Otoño:
+20 de marzo, 19:09
+Solsticio de Invierno:
+21 de junio, 14:29
+1937
+Equinoccio de Primavera:
+23 de septiembre, 11:16
+Solsticio de Verano:
+22 de diciembre, 06:24
+Equinoccio de Otoño:
+21 de marzo, 00:58
+Solsticio de Invierno:
+21 de junio, 20:17
+1938
+Equinoccio de Primavera:
+23 de septiembre, 17:05
+Solsticio de Verano:
+22 de diciembre, 12:13
+Equinoccio de Otoño:
+21 de marzo, 06:47
+Solsticio de Invierno:
+22 de junio, 02:05
+1939
+Equinoccio de Primavera:
+23 de septiembre, 22:53
+Solsticio de Verano:
+22 de diciembre, 18:03
+Equinoccio de Otoño:
+21 de marzo, 12:36
+Solsticio de Invierno:
+22 de junio, 07:53
+1940
+Equinoccio de Primavera:
+23 de septiembre, 04:42
+Solsticio de Verano:
+21 de diciembre, 23:53
+Equinoccio de Otoño:
+20 de marzo, 18:25
+Solsticio de Invierno:
+21 de junio, 13:41
+1941
+Equinoccio de Primavera:
+23 de septiembre, 10:30
+Solsticio de Verano:
+22 de diciembre, 05:42
+Equinoccio de Otoño:
+21 de marzo, 00:14
+Solsticio de Invierno:
+21 de junio, 19:29
+1942
+Equinoccio de Primavera:
+23 de septiembre, 16:19
+Solsticio de Verano:
+22 de diciembre, 11:32
+Equinoccio de Otoño:
+21 de marzo, 06:03
+Solsticio de Invierno:
+22 de junio, 01:17
+1943
+Equinoccio de Primavera:
+23 de septiembre, 22:07
+Solsticio de Verano:
+22 de diciembre, 17:21
+Equinoccio de Otoño:
+21 de marzo, 11:52
+Solsticio de Invierno:
+22 de junio, 07:05
+1944
+Equinoccio de Primavera:
+23 de septiembre, 03:56
+Solsticio de Verano:
+21 de diciembre, 23:11
+Equinoccio de Otoño:
+20 de marzo, 17:41
+Solsticio de Invierno:
+21 de junio, 12:53
+1945
+Equinoccio de Primavera:
+23 de septiembre, 09:44
+Solsticio de Verano:
+22 de diciembre, 05:00
+Equinoccio de Otoño:
+20 de marzo, 23:30
+Solsticio de Invierno:
+21 de junio, 18:41
+1946
+Equinoccio de Primavera:
+23 de septiembre, 15:33
+Solsticio de Verano:
+22 de diciembre, 10:50
+Equinoccio de Otoño:
+21 de marzo, 05:19
+Solsticio de Invierno:
+22 de junio, 00:29
+1947
+Equinoccio de Primavera:
+23 de septiembre, 21:21
+Solsticio de Verano:
+22 de diciembre, 16:40
+Equinoccio de Otoño:
+21 de marzo, 11:08
+Solsticio de Invierno:
+22 de junio, 06:17
+1948
+Equinoccio de Primavera:
+23 de septiembre, 03:10
+Solsticio de Verano:
+21 de diciembre, 22:29
+Equinoccio de Otoño:
+20 de marzo, 16:57
+Solsticio de Invierno:
+21 de junio, 12:04
+1949
+Equinoccio de Primavera:
+23 de septiembre, 08:58
+Solsticio de Verano:
+22 de diciembre, 04:19
+Equinoccio de Otoño:
+20 de marzo, 22:46
+Solsticio de Invierno:
+21 de junio, 17:52
+1950
+Equinoccio de Primavera:
+23 de septiembre, 14:47
+Solsticio de Verano:
+22 de diciembre, 10:08
+Equinoccio de Otoño:
+21 de marzo, 04:35
+Solsticio de Invierno:
+21 de junio, 23:40
+1951
+Equinoccio de Primavera:
+23 de septiembre, 20:36
+Solsticio de Verano:
+22 de diciembre, 15:58
+Equinoccio de Otoño:
+21 de marzo, 10:24
+Solsticio de Invierno:
+22 de junio, 05:28
+1952
+Equinoccio de Primavera:
+23 de septiembre, 02:24
+Solsticio de Verano:
+21 de diciembre, 21:47
+Equinoccio de Otoño:
+20 de marzo, 16:13
+Solsticio de Invierno:
+21 de junio, 11:16
+1953
+Equinoccio de Primavera:
+23 de septiembre, 08:13
+Solsticio de Verano:
+22 de diciembre, 03:37
+Equinoccio de Otoño:
+20 de marzo, 22:02
+Solsticio de Invierno:
+21 de junio, 17:04
+1954
+Equinoccio de Primavera:
+23 de septiembre, 14:01
+Solsticio de Verano:
+22 de diciembre, 09:26
+Equinoccio de Otoño:
+21 de marzo, 03:51
+Solsticio de Invierno:
+21 de junio, 22:52
+1955
+Equinoccio de Primavera:
+23 de septiembre, 19:50
+Solsticio de Verano:
+22 de diciembre, 15:16
+Equinoccio de Otoño:
+21 de marzo, 09:40
+Solsticio de Invierno:
+22 de junio, 04:40
+1956
+Equinoccio de Primavera:
+23 de septiembre, 01:38
+Solsticio de Verano:
+21 de diciembre, 21:05
+Equinoccio de Otoño:
+20 de marzo, 15:29
+Solsticio de Invierno:
+21 de junio, 10:28
+1957
+Equinoccio de Primavera:
+23 de septiembre, 07:27
+Solsticio de Verano:
+22 de diciembre, 02:55
+Equinoccio de Otoño:
+20 de marzo, 21:19
+Solsticio de Invierno:
+21 de junio, 16:16
+1958
+Equinoccio de Primavera:
+23 de septiembre, 13:15
+Solsticio de Verano:
+22 de diciembre, 08:45
+Equinoccio de Otoño:
+21 de marzo, 03:08
+Solsticio de Invierno:
+21 de junio, 22:04
+1959
+Equinoccio de Primavera:
+23 de septiembre, 19:04
+Solsticio de Verano:
+22 de diciembre, 14:34
+Equinoccio de Otoño:
+21 de marzo, 08:57
+Solsticio de Invierno:
+22 de junio, 03:52
+1960
+Equinoccio de Primavera:
+23 de septiembre, 00:52
+Solsticio de Verano:
+21 de diciembre, 20:24
+Equinoccio de Otoño:
+20 de marzo, 14:46
+Solsticio de Invierno:
+21 de junio, 09:40
+1961
+Equinoccio de Primavera:
+23 de septiembre, 06:41
+Solsticio de Verano:
+22 de diciembre, 02:13
+Equinoccio de Otoño:
+20 de marzo, 20:35
+Solsticio de Invierno:
+21 de junio, 15:28
+1962
+Equinoccio de Primavera:
+23 de septiembre, 12:29
+Solsticio de Verano:
+22 de diciembre, 08:03
+Equinoccio de Otoño:
+21 de marzo, 02:24
+Solsticio de Invierno:
+21 de junio, 21:16
+1963
+Equinoccio de Primavera:
+23 de septiembre, 18:18
+Solsticio de Verano:
+22 de diciembre, 13:52
+Equinoccio de Otoño:
+21 de marzo, 08:13
+Solsticio de Invierno:
+22 de junio, 03:04
+1964
+Equinoccio de Primavera:
+23 de septiembre, 00:06
+Solsticio de Verano:
+21 de diciembre, 19:42
+Equinoccio de Otoño:
+20 de marzo, 14:02
+Solsticio de Invierno:
+21 de junio, 08:52
+1965
+Equinoccio de Primavera:
+23 de septiembre, 05:55
+Solsticio de Verano:
+22 de diciembre, 01:31
+Equinoccio de Otoño:
+20 de marzo, 19:51
+Solsticio de Invierno:
+21 de junio, 14:39
+1966
+Equinoccio de Primavera:
+23 de septiembre, 11:43
+Solsticio de Verano:
+22 de diciembre, 07:21
+Equinoccio de Otoño:
+21 de marzo, 01:40
+Solsticio de Invierno:
+21 de junio, 20:27
+1967
+Equinoccio de Primavera:
+23 de septiembre, 17:32
+Solsticio de Verano:
+22 de diciembre, 13:11
+Equinoccio de Otoño:
+21 de marzo, 07:29
+Solsticio de Invierno:
+22 de junio, 02:15
+1968
+Equinoccio de Primavera:
+22 de septiembre, 23:20
+Solsticio de Verano:
+21 de diciembre, 19:00
+Equinoccio de Otoño:
+20 de marzo, 13:18
+Solsticio de Invierno:
+21 de junio, 08:03
+1969
+Equinoccio de Primavera:
+23 de septiembre, 05:09
+Solsticio de Verano:
+22 de diciembre, 00:50
+Equinoccio de Otoño:
+20 de marzo, 19:07
+Solsticio de Invierno:
+21 de junio, 13:51
+1970
+Equinoccio de Primavera:
+23 de septiembre, 10:57
+Solsticio de Verano:
+22 de diciembre, 06:39
+Equinoccio de Otoño:
+21 de marzo, 00:56
+Solsticio de Invierno:
+21 de junio, 19:39
+1971
+Equinoccio de Primavera:
+23 de septiembre, 16:46
+Solsticio de Verano:
+22 de diciembre, 12:29
+Equinoccio de Otoño:
+21 de marzo, 06:45
+Solsticio de Invierno:
+22 de junio, 01:27
+1972
+Equinoccio de Primavera:
+22 de septiembre, 22:34
+Solsticio de Verano:
+21 de diciembre, 18:18
+Equinoccio de Otoño:
+20 de marzo, 12:34
+Solsticio de Invierno:
+21 de junio, 07:15
+1973
+Equinoccio de Primavera:
+23 de septiembre, 04:23
+Solsticio de Verano:
+22 de diciembre, 00:08
+Equinoccio de Otoño:
+20 de marzo, 18:23
+Solsticio de Invierno:
+21 de junio, 13:03
+1974
+Equinoccio de Primavera:
+23 de septiembre, 10:11
+Solsticio de Verano:
+22 de diciembre, 05:57
+Equinoccio de Otoño:
+21 de marzo, 00:12
+Solsticio de Invierno:
+21 de junio, 18:51
+1975
+Equinoccio de Primavera:
+23 de septiembre, 16:00
+Solsticio de Verano:
+22 de diciembre, 11:47
+Equinoccio de Otoño:
+21 de marzo, 06:01
+Solsticio de Invierno:
+22 de junio, 00:39
+1976
+Equinoccio de Primavera:
+22 de septiembre, 21:48
+Solsticio de Verano:
+21 de diciembre, 17:37
+Equinoccio de Otoño:
+20 de marzo, 11:50
+Solsticio de Invierno:
+21 de junio, 06:27
+1977
+Equinoccio de Primavera:
+23 de septiembre, 03:37
+Solsticio de Verano:
+21 de diciembre, 23:26
+Equinoccio de Otoño:
+20 de marzo, 17:39
+Solsticio de Invierno:
+21 de junio, 12:15
+1978
+Equinoccio de Primavera:
+23 de septiembre, 09:25
+Solsticio de Verano:
+22 de diciembre, 05:16
+Equinoccio de Otoño:
+20 de marzo, 23:28
+Solsticio de Invierno:
+21 de junio, 18:03
+1979
+Equinoccio de Primavera:
+23 de septiembre, 15:14
+Solsticio de Verano:
+22 de diciembre, 11:05
+Equinoccio de Otoño:
+21 de marzo, 05:17
+Solsticio de Invierno:
+21 de junio, 23:51
+1980
+Equinoccio de Primavera:
+22 de septiembre, 21:03
+Solsticio de Verano:
+21 de diciembre, 16:55
+Equinoccio de Otoño:
+20 de marzo, 11:06
+Solsticio de Invierno:
+21 de junio, 05:39
+1981
+Equinoccio de Primavera:
+23 de septiembre, 02:51
+Solsticio de Verano:
+21 de diciembre, 22:44
+Equinoccio de Otoño:
+20 de marzo, 16:55
+Solsticio de Invierno:
+21 de junio, 11:27
+1982
+Equinoccio de Primavera:
+23 de septiembre, 08:40
+Solsticio de Verano:
+22 de diciembre, 04:34
+Equinoccio de Otoño:
+20 de marzo, 22:44
+Solsticio de Invierno:
+21 de junio, 17:14
+1983
+Equinoccio de Primavera:
+23 de septiembre, 14:28
+Solsticio de Verano:
+22 de diciembre, 10:23
+Equinoccio de Otoño:
+21 de marzo, 04:33
+Solsticio de Invierno:
+21 de junio, 23:02
+1984
+Equinoccio de Primavera:
+22 de septiembre, 20:17
+Solsticio de Verano:
+21 de diciembre, 16:13
+Equinoccio de Otoño:
+20 de marzo, 10:22
+Solsticio de Invierno:
+21 de junio, 04:50
+1985
+Equinoccio de Primavera:
+23 de septiembre, 02:05
+Solsticio de Verano:
+21 de diciembre, 22:02
+Equinoccio de Otoño:
+20 de marzo, 16:11
+Solsticio de Invierno:
+21 de junio, 10:38
+1986
+Equinoccio de Primavera:
+23 de septiembre, 07:54
+Solsticio de Verano:
+22 de diciembre, 03:52
+Equinoccio de Otoño:
+20 de marzo, 22:00
+Solsticio de Invierno:
+21 de junio, 16:26
+1987
+Equinoccio de Primavera:
+23 de septiembre, 13:42
+Solsticio de Verano:
+22 de diciembre, 09:42
+Equinoccio de Otoño:
+21 de marzo, 03:49
+Solsticio de Invierno:
+21 de junio, 22:14
+1988
+Equinoccio de Primavera:
+22 de septiembre, 19:31
+Solsticio de Verano:
+21 de diciembre, 15:31
+Equinoccio de Otoño:
+20 de marzo, 09:38
+Solsticio de Invierno:
+21 de junio, 04:02
+1989
+Equinoccio de Primavera:
+23 de septiembre, 01:19
+Solsticio de Verano:
+21 de diciembre, 21:21
+Equinoccio de Otoño:
+20 de marzo, 15:27
+Solsticio de Invierno:
+21 de junio, 09:50
+1990
+Equinoccio de Primavera:
+23 de septiembre, 07:08
+Solsticio de Verano:
+22 de diciembre, 03:10
+Equinoccio de Otoño:
+20 de marzo, 21:16
+Solsticio de Invierno:
+21 de junio, 15:38
+1991
+Equinoccio de Primavera:
+23 de septiembre, 12:56
+Solsticio de Verano:
+22 de diciembre, 09:00
+Equinoccio de Otoño:
+21 de marzo, 03:05
+Solsticio de Invierno:
+21 de junio, 21:26
+1992
+Equinoccio de Primavera:
+22 de septiembre, 18:45
+Solsticio de Verano:
+21 de diciembre, 14:49
+Equinoccio de Otoño:
+20 de marzo, 08:54
+Solsticio de Invierno:
+21 de junio, 03:14
+1993
+Equinoccio de Primavera:
+23 de septiembre, 00:33
+Solsticio de Verano:
+21 de diciembre, 20:39
+Equinoccio de Otoño:
+20 de marzo, 14:43
+Solsticio de Invierno:
+21 de junio, 09:02
+1994
+Equinoccio de Primavera:
+23 de septiembre, 06:22
+Solsticio de Verano:
+22 de diciembre, 02:28
+Equinoccio de Otoño:
+20 de marzo, 20:32
+Solsticio de Invierno:
+21 de junio, 14:50
+1995
+Equinoccio de Primavera:
+23 de septiembre, 12:10
+Solsticio de Verano:
+22 de diciembre, 08:18
+Equinoccio de Otoño:
+21 de marzo, 02:21
+Solsticio de Invierno:
+21 de junio, 20:38
+1996
+Equinoccio de Primavera:
+22 de septiembre, 17:59
+Solsticio de Verano:
+21 de diciembre, 14:08
+Equinoccio de Otoño:
+20 de marzo, 08:10
+Solsticio de Invierno:
+21 de junio, 02:26
+1997
+Equinoccio de Primavera:
+22 de septiembre, 23:47
+Solsticio de Verano:
+21 de diciembre, 19:57
+Equinoccio de Otoño:
+20 de marzo, 13:59
+Solsticio de Invierno:
+21 de junio, 08:14
+1998
+Equinoccio de Primavera:
+23 de septiembre, 05:36
+Solsticio de Verano:
+22 de diciembre, 01:47
+Equinoccio de Otoño:
+20 de marzo, 19:48
+Solsticio de Invierno:
+21 de junio, 14:02
+1999
+Equinoccio de Primavera:
+23 de septiembre, 11:24
+Solsticio de Verano:
+22 de diciembre, 07:36
+Equinoccio de Otoño:
+21 de marzo, 01:37
+Solsticio de Invierno:
+21 de junio, 19:50
+2000
+Equinoccio de Primavera:
+22 de septiembre, 17:13
+Solsticio de Verano:
+21 de diciembre, 13:26
+Equinoccio de Otoño:
+20 de marzo, 07:26
+Solsticio de Invierno:
+21 de junio, 01:37
+2001
+Equinoccio de Primavera:
+22 de septiembre, 23:01
+Solsticio de Verano:
+21 de diciembre, 19:15
+Equinoccio de Otoño:
+20 de marzo, 13:15
+Solsticio de Invierno:
+21 de junio, 07:25
+2002
+Equinoccio de Primavera:
+23 de septiembre, 04:50
+Solsticio de Verano:
+22 de diciembre, 01:05
+Equinoccio de Otoño:
+20 de marzo, 19:04
+Solsticio de Invierno:
+21 de junio, 13:13
+2003
+Equinoccio de Primavera:
+23 de septiembre, 10:38
+Solsticio de Verano:
+22 de diciembre, 06:54
+Equinoccio de Otoño:
+21 de marzo, 00:53
+Solsticio de Invierno:
+21 de junio, 19:01
+2004
+Equinoccio de Primavera:
+22 de septiembre, 16:27
+Solsticio de Verano:
+21 de diciembre, 12:44
+Equinoccio de Otoño:
+20 de marzo, 06:42
+Solsticio de Invierno:
+21 de junio, 00:49
+2005
+Equinoccio de Primavera:
+22 de septiembre, 22:15
+Solsticio de Verano:
+21 de diciembre, 18:33
+Equinoccio de Otoño:
+20 de marzo, 12:31
+Solsticio de Invierno:
+21 de junio, 06:37
+2006
+Equinoccio de Primavera:
+23 de septiembre, 04:04
+Solsticio de Verano:
+22 de diciembre, 00:23
+Equinoccio de Otoño:
+20 de marzo, 18:20
+Solsticio de Invierno:
+21 de junio, 12:25
+2007
+Equinoccio de Primavera:
+23 de septiembre, 09:52
+Solsticio de Verano:
+22 de diciembre, 06:13
+Equinoccio de Otoño:
+21 de marzo, 00:09
+Solsticio de Invierno:
+21 de junio, 18:13
+2008
+Equinoccio de Primavera:
+22 de septiembre, 15:41
+Solsticio de Verano:
+21 de diciembre, 12:02
+Equinoccio de Otoño:
+20 de marzo, 05:58
+Solsticio de Invierno:
+21 de junio, 00:01
+2009
+Equinoccio de Primavera:
+22 de septiembre, 21:29
+Solsticio de Verano:
+21 de diciembre, 17:52
+Equinoccio de Otoño:
+20 de marzo, 11:47
+Solsticio de Invierno:
+21 de junio, 05:49
+2010
+Equinoccio de Primavera:
+23 de septiembre, 03:18
+Solsticio de Verano:
+21 de diciembre, 23:41
+Equinoccio de Otoño:
+20 de marzo, 17:36
+Solsticio de Invierno:
+21 de junio, 11:37
+2011
+Equinoccio de Primavera:
+23 de septiembre, 09:06
+Solsticio de Verano:
+22 de diciembre, 05:31
+Equinoccio de Otoño:
+20 de marzo, 23:25
+Solsticio de Invierno:
+21 de junio, 17:25
+2012
+Equinoccio de Primavera:
+22 de septiembre, 14:55
+Solsticio de Verano:
+21 de diciembre, 11:20
+Equinoccio de Otoño:
+20 de marzo, 05:14
+Solsticio de Invierno:
+20 de junio, 23:13
+2013
+Equinoccio de Primavera:
+22 de septiembre, 20:43
+Solsticio de Verano:
+21 de diciembre, 17:10
+Equinoccio de Otoño:
+20 de marzo, 11:03
+Solsticio de Invierno:
+21 de junio, 05:01
+2014
+Equinoccio de Primavera:
+23 de septiembre, 02:32
+Solsticio de Verano:
+21 de diciembre, 22:59
+Equinoccio de Otoño:
+20 de marzo, 16:52
+Solsticio de Invierno:
+21 de junio, 10:49
+2015
+Equinoccio de Primavera:
+23 de septiembre, 08:20
+Solsticio de Verano:
+22 de diciembre, 04:49
+Equinoccio de Otoño:
+20 de marzo, 22:41
+Solsticio de Invierno:
+21 de junio, 16:37
+2016
+Equinoccio de Primavera:
+22 de septiembre, 14:09
+Solsticio de Verano:
+21 de diciembre, 10:38
+Equinoccio de Otoño:
+20 de marzo, 04:30
+Solsticio de Invierno:
+20 de junio, 22:25
+2017
+Equinoccio de Primavera:
+22 de septiembre, 19:57
+Solsticio de Verano:
+21 de diciembre, 16:28
+Equinoccio de Otoño:
+20 de marzo, 10:20
+Solsticio de Invierno:
+21 de junio, 04:12
+2018
+Equinoccio de Primavera:
+23 de septiembre, 01:46
+Solsticio de Verano:
+21 de diciembre, 22:18
+Equinoccio de Otoño:
+20 de marzo, 16:09
+Solsticio de Invierno:
+21 de junio, 10:00
+2019
+Equinoccio de Primavera:
+23 de septiembre, 07:34
+Solsticio de Verano:
+22 de diciembre, 04:07
+Equinoccio de Otoño:
+20 de marzo, 21:58
+Solsticio de Invierno:
+21 de junio, 15:48
+2020
+Equinoccio de Primavera:
+22 de septiembre, 13:23
+Solsticio de Verano:
+21 de diciembre, 09:57
+Equinoccio de Otoño:
+20 de marzo, 03:47
+Solsticio de Invierno:
+20 de junio, 21:36
+2021
+Equinoccio de Primavera:
+22 de septiembre, 19:11
+Solsticio de Verano:
+21 de diciembre, 15:46
+Equinoccio de Otoño:
+20 de marzo, 09:36
+Solsticio de Invierno:
+21 de junio, 03:24
+2022
+Equinoccio de Primavera:
+23 de septiembre, 01:00
+Solsticio de Verano:
+21 de diciembre, 21:36
+Equinoccio de Otoño:
+20 de marzo, 15:25
+Solsticio de Invierno:
+21 de junio, 09:12
+2023
+Equinoccio de Primavera:
+23 de septiembre, 06:48
+Solsticio de Verano:
+22 de diciembre, 03:25
+Equinoccio de Otoño:
+20 de marzo, 21:14
+Solsticio de Invierno:
+21 de junio, 15:00
+2024
+Equinoccio de Primavera:
+22 de septiembre, 12:37
+Solsticio de Verano:
+21 de diciembre, 09:15
+Equinoccio de Otoño:
+20 de marzo, 03:03
+Solsticio de Invierno:
+20 de junio, 20:48
+2025
+Equinoccio de Primavera:
+22 de septiembre, 18:25
+Solsticio de Verano:
+21 de diciembre, 15:04
+Equinoccio de Otoño:
+20 de marzo, 08:52
+Solsticio de Invierno:
+21 de junio, 02:36
+2026
+Equinoccio de Primavera:
+23 de septiembre, 00:14
+Solsticio de Verano:
+21 de diciembre, 20:54
+Equinoccio de Otoño:
+20 de marzo, 14:41
+Solsticio de Invierno:
+21 de junio, 08:24
+2027
+Equinoccio de Primavera:
+23 de septiembre, 06:02
+Solsticio de Verano:
+22 de diciembre, 02:43
+Equinoccio de Otoño:
+20 de marzo, 20:30
+Solsticio de Invierno:
+21 de junio, 14:12
+2028
+Equinoccio de Primavera:
+22 de septiembre, 11:51
+Solsticio de Verano:
+21 de diciembre, 08:33
+Equinoccio de Otoño:
+20 de marzo, 02:19
+Solsticio de Invierno:
+20 de junio, 20:00
+2029
+Equinoccio de Primavera:
+22 de septiembre, 17:39
+Solsticio de Verano:
+21 de diciembre, 14:22
+Equinoccio de Otoño:
+20 de marzo, 08:08
+Solsticio de Invierno:
+21 de junio, 01:48
+2030
+Equinoccio de Primavera:
+22 de septiembre, 23:28
+Solsticio de Verano:
+21 de diciembre, 20:12
+Equinoccio de Otoño:
+20 de marzo, 13:57
+Solsticio de Invierno:
+21 de junio, 07:36
+2031
+Equinoccio de Primavera:
+23 de septiembre, 05:16
+Solsticio de Verano:
+22 de diciembre, 02:02
+Equinoccio de Otoño:
+20 de marzo, 19:46
+Solsticio de Invierno:
+21 de junio, 13:24
+2032
+Equinoccio de Primavera:
+22 de septiembre, 11:05
+Solsticio de Verano:
+21 de diciembre, 07:51
+Equinoccio de Otoño:
+20 de marzo, 01:35
+Solsticio de Invierno:
+20 de junio, 19:12
+2033
+Equinoccio de Primavera:
+22 de septiembre, 16:53
+Solsticio de Verano:
+21 de diciembre, 13:41
+Equinoccio de Otoño:
+20 de marzo, 07:24
+Solsticio de Invierno:
+21 de junio, 01:00
+2034
+Equinoccio de Primavera:
+22 de septiembre, 22:42
+Solsticio de Verano:
+21 de diciembre, 19:30
+Equinoccio de Otoño:
+20 de marzo, 13:13
+Solsticio de Invierno:
+21 de junio, 06:47
+2035
+Equinoccio de Primavera:
+23 de septiembre, 04:30
+Solsticio de Verano:
+22 de diciembre, 01:20
+Equinoccio de Otoño:
+20 de marzo, 19:02
+Solsticio de Invierno:
+21 de junio, 12:35
+2036
+Equinoccio de Primavera:
+22 de septiembre, 10:19
+Solsticio de Verano:
+21 de diciembre, 07:09
+Equinoccio de Otoño:
+20 de marzo, 00:51
+Solsticio de Invierno:
+20 de junio, 18:23
+2037
+Equinoccio de Primavera:
+22 de septiembre, 16:07
+Solsticio de Verano:
+21 de diciembre, 12:59
+Equinoccio de Otoño:
+20 de marzo, 06:40
+Solsticio de Invierno:
+21 de junio, 00:11
+2038
+Equinoccio de Primavera:
+22 de septiembre, 21:56
+Solsticio de Verano:
+21 de diciembre, 18:48
+Equinoccio de Otoño:
+20 de marzo, 12:29
+Solsticio de Invierno:
+21 de junio, 05:59
+2039
+Equinoccio de Primavera:
+23 de septiembre, 03:44
+Solsticio de Verano:
+22 de diciembre, 00:38
+Equinoccio de Otoño:
+20 de marzo, 18:18
+Solsticio de Invierno:
+21 de junio, 11:47
+2040
+Equinoccio de Primavera:
+22 de septiembre, 09:33
+Solsticio de Verano:
+21 de diciembre, 06:27
+Equinoccio de Otoño:
+20 de marzo, 00:07
+Solsticio de Invierno:
+20 de junio, 17:35
+2041
+Equinoccio de Primavera:
+22 de septiembre, 15:21
+Solsticio de Verano:
+21 de diciembre, 12:17
+Equinoccio de Otoño:
+20 de marzo, 05:56
+Solsticio de Invierno:
+20 de junio, 23:23
+2042
+Equinoccio de Primavera:
+22 de septiembre, 21:10
+Solsticio de Verano:
+21 de diciembre, 18:06
+Equinoccio de Otoño:
+20 de marzo, 11:45
+Solsticio de Invierno:
+21 de junio, 05:11
+2043
+Equinoccio de Primavera:
+23 de septiembre, 02:58
+Solsticio de Verano:
+21 de diciembre, 23:56
+Equinoccio de Otoño:
+20 de marzo, 17:34
+Solsticio de Invierno:
+21 de junio, 10:59
+2044
+Equinoccio de Primavera:
+22 de septiembre, 08:47
+Solsticio de Verano:
+21 de diciembre, 05:46
+Equinoccio de Otoño:
+19 de marzo, 23:23
+Solsticio de Invierno:
+20 de junio, 16:47
+2045
+Equinoccio de Primavera:
+22 de septiembre, 14:35
+Solsticio de Verano:
+21 de diciembre, 11:35
+Equinoccio de Otoño:
+20 de marzo, 05:12
+Solsticio de Invierno:
+20 de junio, 22:35
+2046
+Equinoccio de Primavera:
+22 de septiembre, 20:24
+Solsticio de Verano:
+21 de diciembre, 17:25
+Equinoccio de Otoño:
+20 de marzo, 11:01
+Solsticio de Invierno:
+21 de junio, 04:23
+2047
+Equinoccio de Primavera:
+23 de septiembre, 02:12
+Solsticio de Verano:
+21 de diciembre, 23:14
+Equinoccio de Otoño:
+20 de marzo, 16:50
+Solsticio de Invierno:
+21 de junio, 10:11
+2048
+Equinoccio de Primavera:
+22 de septiembre, 08:01
+Solsticio de Verano:
+21 de diciembre, 05:04
+Equinoccio de Otoño:
+19 de marzo, 22:39
+Solsticio de Invierno:
+20 de junio, 15:59
+2049
+Equinoccio de Primavera:
+22 de septiembre, 13:49
+Solsticio de Verano:
+21 de diciembre, 10:53
+Equinoccio de Otoño:
+20 de marzo, 04:28
+Solsticio de Invierno:
+20 de junio, 21:47
+2050
+Equinoccio de Primavera:
+22 de septiembre, 19:38
+Solsticio de Verano:
+21 de diciembre, 16:43
+Equinoccio de Otoño:
+20 de marzo, 10:17
+Solsticio de Invierno:
+21 de junio, 03:35
+2051
+Equinoccio de Primavera:
+23 de septiembre, 01:26
+Solsticio de Verano:
+21 de diciembre, 22:32
+Equinoccio de Otoño:
+20 de marzo, 16:06
+Solsticio de Invierno:
+21 de junio, 09:22
+2052
+Equinoccio de Primavera:
+22 de septiembre, 07:15
+Solsticio de Verano:
+21 de diciembre, 04:22
+Equinoccio de Otoño:
+19 de marzo, 21:55
+Solsticio de Invierno:
+20 de junio, 15:10
+2053
+Equinoccio de Primavera:
+22 de septiembre, 13:03
+Solsticio de Verano:
+21 de diciembre, 10:11
+Equinoccio de Otoño:
+20 de marzo, 03:44
+Solsticio de Invierno:
+20 de junio, 20:58
+2054
+Equinoccio de Primavera:
+22 de septiembre, 18:52
+Solsticio de Verano:
+21 de diciembre, 16:01
+Equinoccio de Otoño:
+20 de marzo, 09:33
+Solsticio de Invierno:
+21 de junio, 02:46
+2055
+Equinoccio de Primavera:
+23 de septiembre, 00:40
+Solsticio de Verano:
+21 de diciembre, 21:50
+Equinoccio de Otoño:
+20 de marzo, 15:22
+Solsticio de Invierno:
+21 de junio, 08:34
+2056
+Equinoccio de Primavera:
+22 de septiembre, 06:28
+Solsticio de Verano:
+21 de diciembre, 03:40
+Equinoccio de Otoño:
+19 de marzo, 21:11
+Solsticio de Invierno:
+20 de junio, 14:22
+2057
+Equinoccio de Primavera:
+22 de septiembre, 12:17
+Solsticio de Verano:
+21 de diciembre, 09:30
+Equinoccio de Otoño:
+20 de marzo, 03:00
+Solsticio de Invierno:
+20 de junio, 20:10
+2058
+Equinoccio de Primavera:
+22 de septiembre, 18:05
+Solsticio de Verano:
+21 de diciembre, 15:19
+Equinoccio de Otoño:
+20 de marzo, 08:49
+Solsticio de Invierno:
+21 de junio, 01:58
+2059
+Equinoccio de Primavera:
+22 de septiembre, 23:54
+Solsticio de Verano:
+21 de diciembre, 21:09
+Equinoccio de Otoño:
+20 de marzo, 14:39
+Solsticio de Invierno:
+21 de junio, 07:46
+2060
+Equinoccio de Primavera:
+22 de septiembre, 05:42
+Solsticio de Verano:
+21 de diciembre, 02:58
+Equinoccio de Otoño:
+19 de marzo, 20:28
+Solsticio de Invierno:
+20 de junio, 13:34
+2061
+Equinoccio de Primavera:
+22 de septiembre, 11:31
+Solsticio de Verano:
+21 de diciembre, 08:48
+Equinoccio de Otoño:
+20 de marzo, 02:17
+Solsticio de Invierno:
+20 de junio, 19:22
+2062
+Equinoccio de Primavera:
+22 de septiembre, 17:19
+Solsticio de Verano:
+21 de diciembre, 14:37
+Equinoccio de Otoño:
+20 de marzo, 08:06
+Solsticio de Invierno:
+21 de junio, 01:10
+2063
+Equinoccio de Primavera:
+22 de septiembre, 23:08
+Solsticio de Verano:
+21 de diciembre, 20:27
+Equinoccio de Otoño:
+20 de marzo, 13:55
+Solsticio de Invierno:
+21 de junio, 06:58
+2064
+Equinoccio de Primavera:
+22 de septiembre, 04:56
+Solsticio de Verano:
+21 de diciembre, 02:16
+Equinoccio de Otoño:
+19 de marzo, 19:44
+Solsticio de Invierno:
+20 de junio, 12:46
+2065
+Equinoccio de Primavera:
+22 de septiembre, 10:45
+Solsticio de Verano:
+21 de diciembre, 08:06
+Equinoccio de Otoño:
+20 de marzo, 01:33
+Solsticio de Invierno:
+20 de junio, 18:34
+2066
+Equinoccio de Primavera:
+22 de septiembre, 16:33
+Solsticio de Verano:
+21 de diciembre, 13:55
+Equinoccio de Otoño:
+20 de marzo, 07:22
+Solsticio de Invierno:
+21 de junio, 00:22
+2067
+Equinoccio de Primavera:
+22 de septiembre, 22:22
+Solsticio de Verano:
+21 de diciembre, 19:45
+Equinoccio de Otoño:
+20 de marzo, 13:11
+Solsticio de Invierno:
+21 de junio, 06:10
+2068
+Equinoccio de Primavera:
+22 de septiembre, 04:10
+Solsticio de Verano:
+21 de diciembre, 01:34
+Equinoccio de Otoño:
+19 de marzo, 19:00
+Solsticio de Invierno:
+20 de junio, 11:57
+2069
+Equinoccio de Primavera:
+22 de septiembre, 09:59
+Solsticio de Verano:
+21 de diciembre, 07:24
+Equinoccio de Otoño:
+20 de marzo, 00:49
+Solsticio de Invierno:
+20 de junio, 17:45
+2070
+Equinoccio de Primavera:
+22 de septiembre, 15:47
+Solsticio de Verano:
+21 de diciembre, 13:14
+Equinoccio de Otoño:
+20 de marzo, 06:38
+Solsticio de Invierno:
+20 de junio, 23:33
+2071
+Equinoccio de Primavera:
+22 de septiembre, 21:36
+Solsticio de Verano:
+21 de diciembre, 19:03
+Equinoccio de Otoño:
+20 de marzo, 12:27
+Solsticio de Invierno:
+21 de junio, 05:21
+2072
+Equinoccio de Primavera:
+22 de septiembre, 03:24
+Solsticio de Verano:
+21 de diciembre, 00:53
+Equinoccio de Otoño:
+19 de marzo, 18:16
+Solsticio de Invierno:
+20 de junio, 11:09
+2073
+Equinoccio de Primavera:
+22 de septiembre, 09:13
+Solsticio de Verano:
+21 de diciembre, 06:42
+Equinoccio de Otoño:
+20 de marzo, 00:05
+Solsticio de Invierno:
+20 de junio, 16:57
+2074
+Equinoccio de Primavera:
+22 de septiembre, 15:01
+Solsticio de Verano:
+21 de diciembre, 12:32
+Equinoccio de Otoño:
+20 de marzo, 05:54
+Solsticio de Invierno:
+20 de junio, 22:45
+2075
+Equinoccio de Primavera:
+22 de septiembre, 20:50
+Solsticio de Verano:
+21 de diciembre, 18:21
+Equinoccio de Otoño:
+20 de marzo, 11:43
+Solsticio de Invierno:
+21 de junio, 04:33
+2076
+Equinoccio de Primavera:
+22 de septiembre, 02:38
+Solsticio de Verano:
+21 de diciembre, 00:11
+Equinoccio de Otoño:
+19 de marzo, 17:32
+Solsticio de Invierno:
+20 de junio, 10:21
+2077
+Equinoccio de Primavera:
+22 de septiembre, 08:27
+Solsticio de Verano:
+21 de diciembre, 06:00
+Equinoccio de Otoño:
+19 de marzo, 23:21
+Solsticio de Invierno:
+20 de junio, 16:09
+2078
+Equinoccio de Primavera:
+22 de septiembre, 14:15
+Solsticio de Verano:
+21 de diciembre, 11:50
+Equinoccio de Otoño:
+20 de marzo, 05:10
+Solsticio de Invierno:
+20 de junio, 21:57
+2079
+Equinoccio de Primavera:
+22 de septiembre, 20:04
+Solsticio de Verano:
+21 de diciembre, 17:39
+Equinoccio de Otoño:
+20 de marzo, 10:59
+Solsticio de Invierno:
+21 de junio, 03:45
+2080
+Equinoccio de Primavera:
+22 de septiembre, 01:52
+Solsticio de Verano:
+20 de diciembre, 23:29
+Equinoccio de Otoño:
+19 de marzo, 16:48
+Solsticio de Invierno:
+20 de junio, 09:33
+2081
+Equinoccio de Primavera:
+22 de septiembre, 07:41
+Solsticio de Verano:
+21 de diciembre, 05:18
+Equinoccio de Otoño:
+19 de marzo, 22:37
+Solsticio de Invierno:
+20 de junio, 15:21
+2082
+Equinoccio de Primavera:
+22 de septiembre, 13:29
+Solsticio de Verano:
+21 de diciembre, 11:08
+Equinoccio de Otoño:
+20 de marzo, 04:26
+Solsticio de Invierno:
+20 de junio, 21:09
+2083
+Equinoccio de Primavera:
+22 de septiembre, 19:18
+Solsticio de Verano:
+21 de diciembre, 16:57
+Equinoccio de Otoño:
+20 de marzo, 10:15
+Solsticio de Invierno:
+21 de junio, 02:57
+2084
+Equinoccio de Primavera:
+22 de septiembre, 01:06
+Solsticio de Verano:
+20 de diciembre, 22:47
+Equinoccio de Otoño:
+19 de marzo, 16:04
+Solsticio de Invierno:
+20 de junio, 08:45
+2085
+Equinoccio de Primavera:
+22 de septiembre, 06:54
+Solsticio de Verano:
+21 de diciembre, 04:36
+Equinoccio de Otoño:
+19 de marzo, 21:53
+Solsticio de Invierno:
+20 de junio, 14:33
+2086
+Equinoccio de Primavera:
+22 de septiembre, 12:43
+Solsticio de Verano:
+21 de diciembre, 10:26
+Equinoccio de Otoño:
+20 de marzo, 03:42
+Solsticio de Invierno:
+20 de junio, 20:20
+2087
+Equinoccio de Primavera:
+22 de septiembre, 18:31
+Solsticio de Verano:
+21 de diciembre, 16:16
+Equinoccio de Otoño:
+20 de marzo, 09:31
+Solsticio de Invierno:
+21 de junio, 02:08
+2088
+Equinoccio de Primavera:
+22 de septiembre, 00:20
+Solsticio de Verano:
+20 de diciembre, 22:05
+Equinoccio de Otoño:
+19 de marzo, 15:20
+Solsticio de Invierno:
+20 de junio, 07:56
+2089
+Equinoccio de Primavera:
+22 de septiembre, 06:08
+Solsticio de Verano:
+21 de diciembre, 03:55
+Equinoccio de Otoño:
+19 de marzo, 21:09
+Solsticio de Invierno:
+20 de junio, 13:44
+2090
+Equinoccio de Primavera:
+22 de septiembre, 11:57
+Solsticio de Verano:
+21 de diciembre, 09:44
+Equinoccio de Otoño:
+20 de marzo, 02:58
+Solsticio de Invierno:
+20 de junio, 19:32
+2091
+Equinoccio de Primavera:
+22 de septiembre, 17:45
+Solsticio de Verano:
+21 de diciembre, 15:34
+Equinoccio de Otoño:
+20 de marzo, 08:47
+Solsticio de Invierno:
+21 de junio, 01:20
+2092
+Equinoccio de Primavera:
+21 de septiembre, 23:34
+Solsticio de Verano:
+20 de diciembre, 21:23
+Equinoccio de Otoño:
+19 de marzo, 14:37
+Solsticio de Invierno:
+20 de junio, 07:08
+2093
+Equinoccio de Primavera:
+22 de septiembre, 05:22
+Solsticio de Verano:
+21 de diciembre, 03:13
+Equinoccio de Otoño:
+19 de marzo, 20:26
+Solsticio de Invierno:
+20 de junio, 12:56
+2094
+Equinoccio de Primavera:
+22 de septiembre, 11:11
+Solsticio de Verano:
+21 de diciembre, 09:02
+Equinoccio de Otoño:
+20 de marzo, 02:15
+Solsticio de Invierno:
+20 de junio, 18:44
+2095
+Equinoccio de Primavera:
+22 de septiembre, 16:59
+Solsticio de Verano:
+21 de diciembre, 14:52
+Equinoccio de Otoño:
+20 de marzo, 08:04
+Solsticio de Invierno:
+21 de junio, 00:32
+2096
+Equinoccio de Primavera:
+21 de septiembre, 22:48
+Solsticio de Verano:
+20 de diciembre, 20:41
+Equinoccio de Otoño:
+19 de marzo, 13:53
+Solsticio de Invierno:
+20 de junio, 06:20
+2097
+Equinoccio de Primavera:
+22 de septiembre, 04:36
+Solsticio de Verano:
+21 de diciembre, 02:31
+Equinoccio de Otoño:
+19 de marzo, 19:42
+Solsticio de Invierno:
+20 de junio, 12:08
+2098
+Equinoccio de Primavera:
+22 de septiembre, 10:25
+Solsticio de Verano:
+21 de diciembre, 08:20
+Equinoccio de Otoño:
+20 de marzo, 01:31
+Solsticio de Invierno:
+20 de junio, 17:56
+2099
+Equinoccio de Primavera:
+22 de septiembre, 16:13
+Solsticio de Verano:
+21 de diciembre, 14:10
+Equinoccio de Otoño:
+20 de marzo, 07:20
+Solsticio de Invierno:
+20 de junio, 23:44

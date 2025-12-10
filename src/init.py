@@ -40,7 +40,7 @@ if __name__ == "__main__":
         ###SEASONS DATA ETL PROCESS###
         #Bronze Layer
         logger.info('Extracting seasons data from website...')
-        seasons_path = get_season()
+        seasons_path = get_season(logger)
 
         #Silver Layer
         logger.info('Loading seasons data to database...')

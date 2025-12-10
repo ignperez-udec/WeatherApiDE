@@ -8,6 +8,7 @@ from pathlib import Path
 from utils.config import load_variables
 from utils.logger import config_log
 import logging
+from bronze.read_weather_from_db import read_weather_from_db  # type: ignore
 
 BASE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DAILY_PARAMS = "weather_code,temperature_2m_mean,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,rain_sum," \
@@ -26,6 +27,11 @@ def search_data_in_files(cod_location: int) -> bool:
 			return True
 	
 	return False
+
+def extract_last_date(cod_location: int) -> datetime.datetime:
+	weather = read_weather_from_db([cod_location])
+
+	return weather['time'].drop_duplicates()[0]
 
 def get_historical_weather(locations: list[dict], logger: logging.Logger) -> list[dict]:
 	path_list = []
@@ -46,9 +52,8 @@ def get_historical_weather(locations: list[dict], logger: logging.Logger) -> lis
 		params = {
 			"latitude": locations[i]['latitude'],
 			"longitude": locations[i]['longitude'],
-			"start_date": "2025-11-01",
-			"end_date": "2025-11-20",
-			#"end_date": (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d"),
+			"start_date": "1940-01-01",
+			"end_date": (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d"),
 			"daily": DAILY_PARAMS
 		}
 
@@ -73,10 +78,13 @@ def get_historical_weather(locations: list[dict], logger: logging.Logger) -> lis
 
 	return path_list
 
-def get_daily_weather(locations: list[dict], last_date: datetime.date, logger: logging.Logger) -> list[dict]:
+def get_daily_weather(locations: list[dict], logger: logging.Logger) -> list[dict]:
 	path_list = []
 
 	for i in range(len(locations)):
+		logger.info('\tReading weather data from database to retrieve the last updated date for location:', locations[i]['location'])
+		last_date = extract_last_date(locations[i]['cod_location'])
+
 		if last_date + datetime.timedelta(days=1) == datetime.datetime.now() - datetime.timedelta(days=1):
 			logger.info('\tNo new data to extract for location: ' + locations[i]['location'])
 			continue
@@ -100,7 +108,7 @@ def get_daily_weather(locations: list[dict], last_date: datetime.date, logger: l
 		except:
 			logger.error('\t\tError extracting data for location: ' + locations[i]['location'])
 			logger.error('\t\t' + out['reason'])
-			break
+			raise Exception(out['reason'])
 
 		with open(path_json, 'w') as f:
 			json.dump(data, f, indent=4)

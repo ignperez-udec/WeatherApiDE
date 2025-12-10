@@ -4,12 +4,15 @@ from sqlalchemy import Table, MetaData, select # type: ignore
 from utils.create_engine_db import create_engine_db  # type: ignore
 from utils.config import load_variables  # type: ignore
 
-def read_weather_from_db() -> pd.DataFrame:
+def read_weather_from_db(cod_location: list[int] = None) -> pd.DataFrame:
     engine = create_engine_db()
 
     CONFIG_VARS = load_variables()
 
-    locations_ids = [int(id.strip()) for id in CONFIG_VARS['API_LOCATIONS_TO_EXTRACT'].split(',')]
+    if cod_location is None:
+        locations_ids = [int(id.strip()) for id in CONFIG_VARS['API_LOCATIONS_TO_EXTRACT'].split(',')]
+    else:
+        locations_ids = cod_location
 
     metadata = MetaData()
     weather_hist = Table('weather_hist', metadata, schema='silver', autoload_with=engine)

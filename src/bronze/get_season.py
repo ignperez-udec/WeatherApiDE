@@ -6,6 +6,8 @@ import os
 import sys
 from pathlib import Path
 from utils.config import load_variables
+from utils.logger import config_log
+import logging
 
 BASE_URL = 'https://wutools.com/es/tiempo/calendario-estaciones'
 
@@ -20,7 +22,7 @@ def open_chrome() -> webdriver.Chrome:
 def close_chrome(driver: webdriver.Chrome):
     driver.quit()
 
-def get_season() -> str:
+def get_season(logger: logging.Logger) -> str:
     season = ''
 
     driver = open_chrome()
@@ -30,7 +32,9 @@ def get_season() -> str:
         EC.visibility_of_element_located((By.ID, 'inputYear'))
     )
 
-    for year in range(1900, 1902):
+    for year in range(1900, 2100):
+        logger.info('\tExtracting season data for year: ' + str(year))
+
         season = season + str(year) + '\n'
 
         input_year = driver.find_element(By.ID, 'inputYear')
@@ -65,7 +69,3 @@ def get_season() -> str:
         f.write(season)
 
     return path_txt
-
-get_season()
-
-
