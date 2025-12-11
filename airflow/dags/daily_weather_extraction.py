@@ -41,7 +41,6 @@ def extract_daily_weather(**kwargs):
     logger = get_logger(name='daily_weather_etl')
 
     ti = kwargs['ti']
-    last_date = ti.xcom_pull(task_ids='extract_last_date')
     locations = ti.xcom_pull(task_ids='extract_locations')
 
     logger.info('Extracting daily weather data from last updated date of each location...')

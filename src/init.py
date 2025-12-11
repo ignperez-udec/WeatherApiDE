@@ -9,6 +9,7 @@ from utils.logger import reset_log, config_log  # type: ignore
 from utils.init_flag import write_init_flag  # type: ignore
 import logging
 import sys
+from gold.dbt_scripts import run_dbt_gold_scripts  # type: ignore
 
 #Init logger
 reset_log(name_log='init')
@@ -58,6 +59,11 @@ if __name__ == "__main__":
         #Silver Layer
         logger.info('Loading historical weather data to database...')
         load_weather_to_db(weather_hist_list_path)
+
+
+        ###PROCESS GOLD LAYER###
+        logger.info('Running dbt scripts...')
+        run_dbt_gold_scripts(logger)
 
 
         #Finish init 

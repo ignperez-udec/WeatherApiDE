@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_locations
+    columns:
+      - name: cod_location
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_weather
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: cod_location
+        tests:
+          - relationships:
+              to: ref('dim_locations')
+              field: cod_location
+      - name: date_id
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: id

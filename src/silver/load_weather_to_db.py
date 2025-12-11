@@ -5,6 +5,7 @@ from sqlalchemy.engine import Engine # type: ignore
 import sys
 from pathlib import Path
 from utils.create_engine_db import create_engine_db  # type: ignore
+import logging
 
 def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):
     records = data.to_dict(orient='records')
@@ -27,9 +28,9 @@ def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):
             stmt = stmt.on_conflict_do_update(index_elements=conflict_keys, set_=update_cols)
             conn.execute(stmt)
 
-def load_weather_to_db(path_list: list[dict]):  # type: ignore
+def load_weather_to_db(path_list: list[dict], logger: logging.Logger):  # type: ignore
     for dict_locations in path_list:
-        print('\tReading historical weather data from json file:', dict_locations['path_json'])
+        logger.info('\tReading historical weather data from json file:', dict_locations['path_json'])
         
         location_weather_hist = pd.read_json(dict_locations['path_json'])
 

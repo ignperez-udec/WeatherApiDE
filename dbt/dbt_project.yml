@@ -1,0 +1,15 @@
+name: weather_api_de
+version: 1.0.0
+config-version: 2
+
+profile: weather_api_de
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshot"]
+
+models:
+  weather_api_de:
+    +materialized: table

@@ -25,24 +25,6 @@ services:
       retries: 10
 
   # ---------------------------------
-  # DBT SERVICE
-  # ---------------------------------
-
-  dbt:
-    build: 
-      context: ./dbt
-      dockerfile: Dockerfile
-    container_name: dbt
-    volumes:
-      - ./dbt:/dbt
-    environment:
-      DBT_PROFILES_DIR: /dbt/profiles
-    depends_on:
-      - dwh_db
-    env_file:
-      - .env
-
-  # ---------------------------------
   # CHROME SERVICE
   # ---------------------------------
 
@@ -68,8 +50,11 @@ services:
     volumes:
       - ./src:/WeatherApiDE/src
       - ./data:/WeatherApiDE/data
+      - ./dbt:/WeatherApiDE/dbt
     ports:
       - "5678:5678"
+    environment:
+      DBT_PROFILES_DIR: /WeatherApiDE/dbt/profiles
     env_file:
       - .env
 

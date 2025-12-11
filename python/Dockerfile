@@ -7,6 +7,9 @@ WORKDIR /WeatherApiDE
 # Install PostgreSQL client (for pg_isready)
 RUN apt-get update && apt-get install -y postgresql-client && rm -rf /var/lib/apt/lists/*
 
+# Install dbt (choose your adapter)
+RUN pip install --no-cache-dir dbt-postgres
+
 #Copy dependencies
 COPY python/requirements.txt python/requirements.txt
 RUN pip install --no-cache-dir -r python/requirements.txt

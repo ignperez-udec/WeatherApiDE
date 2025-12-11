@@ -1,0 +1,20 @@
+weather_api_de:
+  target: gold
+  outputs:
+    silver:
+      type: postgres
+      host: "{{ env_var('DWH_DB_HOST') }}"
+      database: "{{ env_var('DWH_DB_NAME') }}"
+      schema: silver
+      user: "{{ env_var('DWH_DB_USER') }}"
+      password: "{{ env_var('DWH_DB_PASSWORD') }}"
+      port: "{{ env_var('DWH_DB_PORT') | int }}"
+
+    gold:
+      type: postgres
+      host: "{{ env_var('DWH_DB_HOST') }}"
+      database: "{{ env_var('DWH_DB_NAME') }}"
+      schema: gold
+      user: "{{ env_var('DWH_DB_USER') }}"
+      password: "{{ env_var('DWH_DB_PASSWORD') }}"
+      port: "{{ env_var('DWH_DB_PORT') | int }}"
