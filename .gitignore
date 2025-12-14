@@ -60,9 +60,9 @@ airflow_pgdata/
 *.sqlite
 *.sql
 *.dump
-!dbt/models/gold/*.json
-!dbt/models/silver/*.json
-!postgresql/*.json
+!dbt/models/gold/*.sql
+!dbt/models/silver/*.sql
+!postgresql/*.sql
 
 #########################
 # METABASE
