@@ -1,7 +1,8 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator # type: ignore
+from airflow.providers.docker.operators.docker import DockerOperator  # type: ignore
 from datetime import datetime, timedelta
-import sys
+import sys, os
 from datetime import datetime
 from src.email import notify_failure, notify_success
 from src.log import get_logger, log_failure_error, log_retry_error # type: ignore
@@ -10,7 +11,7 @@ sys.path.append("/opt/airflow/src")
 
 from bronze.get_weather import get_daily_weather  # type: ignore
 from bronze.read_locations_from_db import read_locations_from_db  # type: ignore
-from bronze.read_weather_from_db import read_weather_from_db  # type: ignore
+from bronze.read_weather_from_db import read_last_date_from_weather_gold  # type: ignore
 from silver.load_weather_to_db import load_weather_to_db  # type: ignore
 from utils.logger import reset_log  # type: ignore
 
@@ -46,9 +47,6 @@ def extract_daily_weather(**kwargs):
     logger.info('Extracting daily weather data from last updated date of each location...')
     weather_daily_list_path = get_daily_weather(locations, logger)
 
-    if weather_daily_list_path is None or len(weather_daily_list_path) == 0:
-        raise ValueError("No daily weather data was extracted.")
-
     return weather_daily_list_path
 
 def load_daily_weather(**kwargs):
@@ -58,7 +56,17 @@ def load_daily_weather(**kwargs):
     weather_daily_list_path = ti.xcom_pull(task_ids='extract_daily_weather')
 
     logger.info('Loading daily weather data to database...')
-    load_weather_to_db(weather_daily_list_path)
+    load_weather_to_db(weather_daily_list_path, logger)
+
+def extract_last_date(**kwargs):
+    logger = get_logger(name='daily_weather_etl')
+
+    logger.info('Extracting last updated date of silver.weather_hist...')
+    last_date = read_last_date_from_weather_gold()
+
+    print(last_date)
+    print(last_date['date'].sort_values(ascending=True)[0])
+    return last_date['date'].sort_values(ascending=True)[0]
 
 def finish_dag(**kwargs):
     logger = get_logger(name='daily_weather_etl')
@@ -131,10 +139,54 @@ with DAG(
         on_failure_callback=log_failure
     )
 
+    extract_last_date_task = PythonOperator(
+        task_id='extract_last_date',
+        python_callable=extract_last_date,
+        on_failure_callback=log_failure
+    )
+
+    run_fact_weather_dbt_task = DockerOperator(
+        task_id='run_fact_weather_dbt',
+        image='weatherapide-python:latest',
+        api_version='auto',
+        auto_remove=True,
+        docker_url='unix://var/run/docker.sock',
+        network_mode='weatherapide_default',
+        entrypoint="/bin/bash",
+        command='''
+            "-c"
+            "cd dbt
+            echo Running fact_weather with upsert_from={{ ti.xcom_pull(task_ids='extract_last_date') }}
+            dbt run -s fact_weather --vars '{ \"upsert_from\": \"{{ ti.xcom_pull(task_ids='extract_last_date') }}\" }'"
+        ''',
+        environment={
+            "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
+            **os.environ
+        },
+        mount_tmp_dir=False,
+    )
+
+    test_dbt_task = DockerOperator(
+        task_id='test_dbt',
+        image='weatherapide-python:latest',
+        docker_url='unix://var/run/docker.sock',
+        network_mode='weatherapide_default',
+        entrypoint="/bin/bash",
+        command='''
+            "-c"
+            "cd dbt && dbt test"
+        ''',
+        environment={
+            "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
+            **os.environ
+        },
+        mount_tmp_dir=False,
+    )
+
     finish_dag_task = PythonOperator(
         task_id='finish_dag',
         python_callable=finish_dag,
         on_failure_callback=log_failure
     )
 
-    init_dag_task >>  extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> finish_dag_task
+    init_dag_task >>  extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> extract_last_date_task >> run_fact_weather_dbt_task >> test_dbt_task >> finish_dag_task

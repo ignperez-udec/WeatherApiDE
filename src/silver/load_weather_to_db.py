@@ -30,7 +30,7 @@ def upsert_weather_hist(engine: Engine, data: pd.DataFrame, chunk_size=1000):
 
 def load_weather_to_db(path_list: list[dict], logger: logging.Logger):  # type: ignore
     for dict_locations in path_list:
-        logger.info('\tReading historical weather data from json file:', dict_locations['path_json'])
+        logger.info('\tReading historical weather data from json file:' + dict_locations['path_json'])
         
         location_weather_hist = pd.read_json(dict_locations['path_json'])
 

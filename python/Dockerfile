@@ -21,6 +21,7 @@ RUN chmod +x python/init.sh
 #Copy source and data files
 COPY src src
 COPY data data
+COPY dbt dbt
 
 #Define entrypoint
 ENTRYPOINT ["bash","/WeatherApiDE/python/init.sh"]

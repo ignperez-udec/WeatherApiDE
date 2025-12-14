@@ -113,7 +113,7 @@ services:
     environment:
       POSTGRES_USER: ${AIRFLOW_DB_USER}
       POSTGRES_PASSWORD: ${AIRFLOW_DB_PASSWORD}
-      POSTGRES_DB: ${AIRFLOW_DB_HOST}
+      POSTGRES_DB: ${AIRFLOW_DB_NAME}
     volumes:
       - airflow_pgdata:/var/lib/postgresql/data
 
@@ -143,11 +143,13 @@ services:
       AIRFLOW__SMTP__SMTP_PASSWORD: ${AIRFLOW__SMTP__SMTP_PASSWORD}
       AIRFLOW__SMTP__SMTP_MAIL_FROM: ${AIRFLOW__SMTP__SMTP_MAIL_FROM}
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./src:/opt/airflow/src
       - ./data:/opt/airflow/data
+      - ./dbt:/opt/airflow/dbt
     command: >
       bash -c "
         echo 'Waiting for Postgres...';

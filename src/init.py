@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
         #Silver Layer
         logger.info('Loading historical weather data to database...')
-        load_weather_to_db(weather_hist_list_path)
+        load_weather_to_db(weather_hist_list_path, logger)
 
 
         ###PROCESS GOLD LAYER###
@@ -69,6 +69,7 @@ if __name__ == "__main__":
         #Finish init 
         write_init_flag('DONE')
         logger.info('Finished!')
+
     except:
         #Error in flag
         write_init_flag('ERROR')

@@ -8,7 +8,7 @@ from pathlib import Path
 from utils.config import load_variables
 from utils.logger import config_log
 import logging
-from bronze.read_weather_from_db import read_weather_from_db  # type: ignore
+from bronze.read_weather_from_db import read_last_date_from_weather_silver  # type: ignore
 
 BASE_URL = "https://archive-api.open-meteo.com/v1/archive"
 DAILY_PARAMS = "weather_code,temperature_2m_mean,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,rain_sum," \
@@ -29,7 +29,7 @@ def search_data_in_files(cod_location: int) -> bool:
 	return False
 
 def extract_last_date(cod_location: int) -> datetime.datetime:
-	weather = read_weather_from_db([cod_location])
+	weather = read_last_date_from_weather_silver([cod_location])
 
 	return weather['time'].drop_duplicates()[0]
 
@@ -82,7 +82,7 @@ def get_daily_weather(locations: list[dict], logger: logging.Logger) -> list[dic
 	path_list = []
 
 	for i in range(len(locations)):
-		logger.info('\tReading weather data from database to retrieve the last updated date for location:', locations[i]['location'])
+		logger.info('\tReading weather data from database to retrieve the last updated date for location:' + locations[i]['location'])
 		last_date = extract_last_date(locations[i]['cod_location'])
 
 		if last_date + datetime.timedelta(days=1) == datetime.datetime.now() - datetime.timedelta(days=1):
@@ -91,13 +91,20 @@ def get_daily_weather(locations: list[dict], logger: logging.Logger) -> list[dic
 
 		logger.info('\tExtracting daily data for location:', locations[i]['location'])
 
-		path_json = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_daily_' + str(locations[i]['cod_location']) + '_' + last_date.strftime('%Y-%m-%d') + '.json')
+		init_date = (last_date + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+		end_date = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+
+		if init_date > end_date:
+			logger.info('\t\tNo new data to extract for location: ' + locations[i]['location'])
+			continue
+
+		path_json = os.path.join(CONFIG_VARS['DATA_BRONZE_PATH'], 'weather_daily_' + str(locations[i]['cod_location']) + '_from_' + init_date + '_to_' + end_date + '.json')
 
 		params = {
 			"latitude": locations[i]['latitude'],
 			"longitude": locations[i]['longitude'],
-			"start_date": (last_date + datetime.timedelta(days=1)).strftime("%Y-%m-%d"),
-			"end_date": (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d"),
+			"start_date": init_date,
+			"end_date": end_date,
 			"daily": DAILY_PARAMS
 		}
 
