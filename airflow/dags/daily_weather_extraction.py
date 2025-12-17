@@ -68,6 +68,14 @@ def extract_last_date(**kwargs):
     print(last_date['date'].sort_values(ascending=True)[0])
     return last_date['date'].sort_values(ascending=True)[0]
 
+def log_dbt_run_fact_weather(**kwargs):
+    logger = get_logger(name='daily_weather_etl')
+    logger.info('Running dbt fact_weather model...')
+
+def log_dbt_test(**kwargs):
+    logger = get_logger(name='daily_weather_etl')
+    logger.info('Running dbt tests...')
+
 def finish_dag(**kwargs):
     logger = get_logger(name='daily_weather_etl')
     logger.info('Finished!')
@@ -145,6 +153,12 @@ with DAG(
         on_failure_callback=log_failure
     )
 
+    log_dbt_run_fact_weather_task = PythonOperator(
+        task_id='log_dbt_run_fact_weather',
+        python_callable=log_dbt_run_fact_weather,
+        on_failure_callback=log_failure
+    )
+
     run_fact_weather_dbt_task = DockerOperator(
         task_id='run_fact_weather_dbt',
         image='weatherapide-python:latest',
@@ -154,16 +168,22 @@ with DAG(
         network_mode='weatherapide_default',
         entrypoint="/bin/bash",
         command='''
-            "-c"
-            "cd dbt
-            echo Running fact_weather with upsert_from={{ ti.xcom_pull(task_ids='extract_last_date') }}
-            dbt run -s fact_weather --vars '{ \"upsert_from\": \"{{ ti.xcom_pull(task_ids='extract_last_date') }}\" }'"
+            -c '
+            cd dbt
+            dbt run -s fact_weather --vars "{ \"upsert_from\": \"{{ ti.xcom_pull(task_ids='extract_last_date') }}\" }"
+            '
         ''',
         environment={
             "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
             **os.environ
         },
         mount_tmp_dir=False,
+    )
+
+    log_dbt_test_task = PythonOperator(
+        task_id='log_dbt_test',
+        python_callable=log_dbt_test,
+        on_failure_callback=log_failure
     )
 
     test_dbt_task = DockerOperator(
@@ -173,8 +193,10 @@ with DAG(
         network_mode='weatherapide_default',
         entrypoint="/bin/bash",
         command='''
-            "-c"
-            "cd dbt && dbt test"
+            -c '
+            cd dbt
+            dbt test
+            '
         ''',
         environment={
             "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
@@ -189,4 +211,6 @@ with DAG(
         on_failure_callback=log_failure
     )
 
-    init_dag_task >>  extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> extract_last_date_task >> run_fact_weather_dbt_task >> test_dbt_task >> finish_dag_task
+    init_dag_task >>  extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> \
+        extract_last_date_task >> log_dbt_run_fact_weather_task >> run_fact_weather_dbt_task >> test_dbt_task >> \
+            log_dbt_test_task >> finish_dag_task
