@@ -59,6 +59,20 @@ services:
       - .env
 
   # # ---------------------------------
+  # # SPARK SERVICE
+  # # ---------------------------------
+
+  spark:
+    build:
+      context: .
+      dockerfile: spark/Dockerfile
+    container_name: spark
+    volumes:
+      - ./src:/WeatherApiDE/src
+    depends_on:
+      - dwh_db
+
+  # # ---------------------------------
   # # METABASE SERVICE
   # # ---------------------------------
 
