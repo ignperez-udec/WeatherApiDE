@@ -56,6 +56,11 @@ def load_weather_to_db(path_list: list[dict], logger: logging.Logger):  # type: 
         location_weather_hist['sunrise'] = pd.to_datetime(location_weather_hist['sunrise'], format='%Y-%m-%dT%H:%M')
         location_weather_hist['sunset'] = pd.to_datetime(location_weather_hist['sunset'], format='%Y-%m-%dT%H:%M')
 
+        location_weather_hist['temperature_mean'] = location_weather_hist['temperature_mean'].interpolate(limit_direction='both')
+        location_weather_hist['temperature_max'] = location_weather_hist['temperature_max'].interpolate(limit_direction='both')
+        location_weather_hist['temperature_min'] = location_weather_hist['temperature_min'].interpolate(limit_direction='both')
+        location_weather_hist['precipitation_sum'] = location_weather_hist['precipitation_sum'].interpolate(limit_direction='both')
+
         engine = create_engine_db()
 
         metadata = MetaData(schema="silver")

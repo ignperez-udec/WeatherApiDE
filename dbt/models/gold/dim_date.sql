@@ -8,9 +8,9 @@ WITH
 SELECT
     TO_CHAR(ds.date, 'YYYYMMDD')::BIGINT AS id,
     ds.date,
-    EXTRACT(YEAR FROM ds.date) AS year,
-    EXTRACT(MONTH FROM ds.date) AS month,
-    EXTRACT(DAY FROM ds.date) AS day,
+    EXTRACT(YEAR FROM ds.date)::INTEGER AS year,
+    EXTRACT(MONTH FROM ds.date)::INTEGER AS month,
+    EXTRACT(DAY FROM ds.date)::INTEGER AS day,
     TO_CHAR(ds.date, 'Day') AS day_name,
     CASE
         WHEN ds.date < s.autumn_equinox::DATE OR ds.date >= s.summer_solstice::DATE THEN 'Summer'
