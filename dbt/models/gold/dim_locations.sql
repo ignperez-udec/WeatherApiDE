@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', on_schema_change='ignore') }}
 
 SELECT
     cod_location,

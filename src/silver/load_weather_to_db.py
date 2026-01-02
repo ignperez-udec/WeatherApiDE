@@ -1,5 +1,5 @@
 import pandas as pd # type: ignore
-from sqlalchemy import MetaData, Table, Column, Date, DateTime, Float, String, Integer, BigInteger, UniqueConstraint # type: ignore
+from sqlalchemy import MetaData, Table, Column, Date, DateTime, Float, Integer, BigInteger, UniqueConstraint # type: ignore
 from sqlalchemy.dialects.postgresql import insert as pg_insert  # type: ignore
 from sqlalchemy.engine import Engine # type: ignore
 import sys
