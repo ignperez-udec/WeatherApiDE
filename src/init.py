@@ -10,6 +10,7 @@ from utils.init_flag import write_init_flag  # type: ignore
 import logging
 import sys
 from gold.dbt_scripts import run_dbt_gold_scripts  # type: ignore
+from silver.run_koppen_model import run_koppen_model  # type: ignore
 
 #Init logger
 reset_log(name_log='init')
@@ -59,6 +60,12 @@ if __name__ == "__main__":
         #Silver Layer
         logger.info('Loading historical weather data to database...')
         load_weather_to_db(weather_hist_list_path, logger)
+
+
+
+        ###KOPPEN MODEL PROCESS###
+        logger.info('Running Koppen model...')
+        run_koppen_model()
 
 
         ###PROCESS GOLD LAYER###

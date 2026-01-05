@@ -23,6 +23,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    networks:
+      - de_net
 
   # ---------------------------------
   # CHROME SERVICE
@@ -33,6 +35,64 @@ services:
     container_name: chrome
     ports:
       - "4444:4444"
+    networks:
+      - de_net
+
+  # # ---------------------------------
+  # # SPARK MASTER
+  # # ---------------------------------
+
+  spark-master:
+    build:
+      context: .
+      dockerfile: spark/Dockerfile
+    container_name: spark-master
+    hostname: spark-master
+    environment:
+      SPARK_MODE: master
+      JAVA_HOME: /opt/java/openjdk
+      JDK_JAVA_OPTIONS: --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+    command: >
+      bash -c "/opt/spark/sbin/start-master.sh
+      --host spark-master
+      --port 7077
+      --webui-port 8081 && tail -f /dev/null"
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./src:/WeatherApiDE/src
+    env_file:
+      - .env
+    depends_on:
+      - dwh_db
+    networks:
+      - de_net
+
+  # # ---------------------------------
+  # # SPARK WORKER
+  # # ---------------------------------
+
+  spark-worker:
+    build:
+      context: .
+      dockerfile: spark/Dockerfile
+    container_name: spark-worker
+    hostname: spark-worker
+    environment:
+      SPARK_MODE: worker
+      JAVA_HOME: /opt/java/openjdk
+      JDK_JAVA_OPTIONS: --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+    command: >
+      bash -c "/opt/spark/sbin/start-worker.sh
+      spark://spark-master:7077 && tail -f /dev/null"
+    volumes:
+      - ./src:/WeatherApiDE/src
+    env_file:
+      - .env
+    depends_on:
+      - spark-master
+    networks:
+      - de_net
 
   # ---------------------------------
   # PYTHON SERVICE
@@ -46,6 +106,7 @@ services:
     depends_on:
       - dwh_db
       - chrome
+      - spark-worker
     working_dir: /WeatherApiDE
     volumes:
       - ./src:/WeatherApiDE/src
@@ -55,25 +116,13 @@ services:
       - "5678:5678"
     environment:
       DBT_PROFILES_DIR: /WeatherApiDE/dbt/profiles
+      JAVA_HOME: /usr/lib/jvm/java-21-openjdk-amd64
+      JDK_JAVA_OPTIONS: --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+      PYSPARK_PYTHON: python3
     env_file:
       - .env
-
-  # # ---------------------------------
-  # # SPARK SERVICE
-  # # ---------------------------------
-
-  spark:
-    build:
-      context: .
-      dockerfile: spark/Dockerfile
-    container_name: spark
-    depends_on:
-      - dwh_db
-    working_dir: /WeatherApiDE
-    volumes:
-      - ./src:/WeatherApiDE/src
-    env_file:
-      - .env
+    networks:
+      - de_net
 
   # # ---------------------------------
   # # METABASE SERVICE
@@ -133,6 +182,8 @@ services:
       POSTGRES_DB: ${AIRFLOW_DB_NAME}
     volumes:
       - airflow_pgdata:/var/lib/postgresql/data
+    networks:
+      - de_net
 
   # -------------------------
   # AIRFLOW SERVICE
@@ -197,8 +248,14 @@ services:
       "
     ports:
       - "8080:8080"
+    networks:
+      - de_net
 
 volumes:
   pgdata:
   metabase_data:
   airflow_pgdata:
+
+networks:
+  de_net:
+    driver: bridge

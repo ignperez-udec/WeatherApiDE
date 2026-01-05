@@ -1,4 +1,4 @@
-FROM apache/spark:3.4.1
+FROM apache/spark:4.0.1
 
 # Set Spark home explicitly
 ENV SPARK_HOME=/opt/spark
@@ -23,6 +23,3 @@ WORKDIR /WeatherApiDE
 COPY src src
 
 ENV PYTHONPATH=/WeatherApiDE/src
-
-# Keep container running
-CMD ["bash", "-c", "tail -f /dev/null"]
