@@ -165,7 +165,7 @@ with DAG(
         api_version='auto',
         auto_remove=True,
         docker_url='unix://var/run/docker.sock',
-        network_mode='weatherapide_default',
+        network_mode='weatherapide_de_net',
         entrypoint="/bin/bash",
         command='''
             -c '
@@ -190,7 +190,7 @@ with DAG(
         task_id='test_dbt',
         image='weatherapide-python:latest',
         docker_url='unix://var/run/docker.sock',
-        network_mode='weatherapide_default',
+        network_mode='weatherapide_de_net',
         entrypoint="/bin/bash",
         command='''
             -c '
