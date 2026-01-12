@@ -6,3 +6,4 @@ sources:
       - name: locations
       - name: seasons
       - name: weather_hist
+      - name: koppen_model

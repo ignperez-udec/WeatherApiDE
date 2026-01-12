@@ -43,3 +43,21 @@ models:
       - name: precipitation_sum
         tests:
           - not_null
+
+  - name: fact_koppen_model
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: cod_location
+        tests:
+          - relationships:
+              to: ref('dim_locations')
+              field: cod_location
+      - name: koppen_class
+        tests:
+          - not_null
+      - name: koppen_subclass
+        tests:
+          - not_null
