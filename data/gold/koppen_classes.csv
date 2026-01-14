@@ -1,0 +1,6 @@
+class|name|description
+A|Tropical|Hot climates with average temperature of the coldest month above 18°C
+B|Dry|Climates with evaporation exceeding precipitation
+C|Temperate|Mild mid-latitude climates with coldest month between -3°C and 18°C
+D|Continental|Cold mid-latitude climates with coldest month below -3°C
+E|Polar|Very cold climates with warmest month below 10°C

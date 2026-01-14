@@ -1,0 +1,32 @@
+code|class|name|description
+Af|A|Tropical rainforest|No dry season and abundant rainfall year-round
+Am|A|Tropical monsoon|Short dry season with very heavy rainfall
+Aw|A|Tropical savanna dry winter|Distinct dry winter season
+As|A|Tropical savanna dry summer|Distinct dry summer season
+BWh|B|Hot desert|Very low precipitation and high temperatures
+BWk|B|Cold desert|Very low precipitation with cold winters
+BSh|B|Hot semi-arid|Low precipitation and high temperatures
+BSk|B|Cold semi-arid|Low precipitation with cold winters
+Csa|C|Mediterranean hot summer|Dry hot summers and wet winters
+Csb|C|Mediterranean warm summer|Dry warm summers and wet winters
+Csc|C|Mediterranean cold summer|Dry cool summers and wet winters
+Cwa|C|Humid subtropical dry winter|Dry winter with hot summer
+Cwb|C|Subtropical highland dry winter|Dry winter with mild summer
+Cwc|C|Subtropical highland cold|Dry winter with cool summer
+Cfa|C|Humid subtropical|No dry season and hot summer
+Cfb|C|Oceanic|No dry season and mild summer
+Cfc|C|Subpolar oceanic|No dry season and cool summer
+Dsa|D|Continental dry summer hot|Dry hot summers and cold winters
+Dsb|D|Continental dry summer warm|Dry warm summers and cold winters
+Dsc|D|Continental dry summer cold|Dry cool summers and very cold winters
+Dsd|D|Continental dry summer very cold|Dry summers and extremely cold winters
+Dwa|D|Continental dry winter hot|Dry winter and hot summer
+Dwb|D|Continental dry winter warm|Dry winter and warm summer
+Dwc|D|Continental dry winter cold|Dry winter and cool summer
+Dwd|D|Continental dry winter very cold|Dry winter and extremely cold conditions
+Dfa|D|Humid continental hot summer|No dry season and hot summer
+Dfb|D|Humid continental warm summer|No dry season and warm summer
+Dfc|D|Subarctic|No dry season and cool summer
+Dfd|D|Extremely cold subarctic|Very cold winters and short summers
+ET|E|Tundra|Warmest month between 0°C and 10°C
+EF|E|Ice cap|All months below 0°C

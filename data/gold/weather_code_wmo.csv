@@ -1,0 +1,101 @@
+code|description
+00|Cloud development not observed or not observable (change of the state of sky during past hour)
+01|Clouds generally dissolving or becoming less developed
+02|State of sky on the whole unchanged
+03|Clouds generally forming or developing
+04|Visibility reduced by smoke (e.g. veldt/forest fires, industrial smoke or volcanic ashes)
+05|Haze
+06|Widespread dust in suspension in the air (not raised by wind at/near station)
+07|Dust or sand raised by wind at/near station (no well-developed dust/sand whirl or storm)
+08|Well-developed dust/sand whirl seen (no duststorm or sandstorm)
+09|Duststorm or sandstorm within sight at time of observation
+10|Mist
+11|Patches of shallow fog or ice fog at the station
+12|More or less continuous shallow fog or ice fog at the station
+13|Lightning visible, no thunder heard
+14|Precipitation within sight, not reaching ground or sea surface
+15|Precipitation within sight, reaching ground/sea surface but distant (>5 km)
+16|Precipitation within sight, near but not at the station
+17|Thunderstorm but no precipitation at time of observation
+18|Squalls at or within sight of station
+19|Funnel cloud(s) (tornado or waterspout)
+20|Drizzle (not freezing) or snow grains (not falling as showers)
+21|Rain (not freezing, not showers)
+22|Snow (not showers)
+23|Rain and snow or ice pellets (not showers)
+24|Freezing drizzle or freezing rain
+25|Shower(s) of rain
+26|Shower(s) of snow or rain and snow
+27|Shower(s) of hail or rain and hail
+28|Fog or ice fog during preceding hour (not at time of observation)
+29|Thunderstorm (with or without precipitation) in preceding hour
+30|Slight or moderate duststorm or sandstorm, has decreased during the preceding hour
+31|Slight or moderate duststorm or sandstorm, no appreciable change
+32|Slight or moderate duststorm or sandstorm, has begun or increased
+33|Severe duststorm or sandstorm, has decreased during preceding hour
+34|Severe duststorm or sandstorm, no appreciable change
+35|Severe duststorm or sandstorm, has begun or increased
+36|Slight or moderate drifting snow (generally low)
+37|Heavy drifting snow
+38|Slight or moderate blowing snow (generally high)
+39|Heavy drifting snow
+40|Fog or ice fog at a distance (not at the station)
+41|Fog or ice fog in patches
+42|Fog or ice fog, sky visible, has become thinner during the preceding hour
+43|Fog or ice fog, sky invisible
+44|Fog or ice fog, sky visible, no appreciable change
+45|Fog or ice fog, sky invisible, no appreciable change
+46|Fog or ice fog, sky visible, has begun or become thicker
+47|Fog or ice fog, sky invisible, has begun or become thicker
+48|Fog depositing rime, sky visible
+49|Fog depositing rime, sky invisible
+50|Drizzle (not freezing), intermittent, slight at time of observation
+51|Drizzle (not freezing), continuous
+52|Drizzle (not freezing), intermittent, moderate
+53|Drizzle (not freezing), continuous, moderate
+54|Drizzle (not freezing), intermittent, heavy
+55|Drizzle (not freezing), continuous, heavy
+56|Freezing drizzle, slight
+57|Freezing drizzle, moderate or heavy
+58|Drizzle and rain, slight
+59|Drizzle and rain, moderate or heavy
+60|Rain (not freezing), intermittent, slight
+61|Rain (not freezing), continuous, slight
+62|Rain (not freezing), intermittent, moderate
+63|Rain (not freezing), continuous, moderate
+64|Rain (not freezing), intermittent, heavy
+65|Rain (not freezing), continuous, heavy
+66|Freezing rain, slight
+67|Freezing rain, moderate or heavy
+68|Rain or drizzle and snow, slight
+69|Rain or drizzle and snow, moderate or heavy
+70|Snowflakes, intermittent, slight
+71|Snowflakes, continuous, slight
+72|Snowflakes, intermittent, moderate
+73|Snowflakes, continuous, moderate
+74|Snowflakes, intermittent, heavy
+75|Snowflakes, continuous, heavy
+76|Diamond dust (with or without fog)
+77|Snow grains (with or without fog)
+78|Isolated star-like snow crystals (with or without fog)
+79|Ice pellets
+80|Rain shower(s), slight
+81|Rain shower(s), moderate or heavy
+82|Rain shower(s), violent
+83|Shower(s) of rain and snow mixed, slight
+84|Shower(s) of rain and snow mixed, moderate or heavy
+85|Snow shower(s), slight
+86|Snow shower(s), moderate or heavy
+87|Shower(s) of snow pellets or small hail, slight
+88|Shower(s) of snow pellets or small hail, moderate or heavy
+89|Shower(s) of hail (with or without rain or mixed), slight
+90|Shower(s) of hail (with or without rain or mixed), moderate or heavy
+91|Slight rain at time of observation, thunderstorm during preceding hour
+92|Moderate or heavy rain at time of observation
+93|Slight snow or rain and snow mixed or hail at time of observation
+94|Moderate or heavy snow or rain and snow mixed or hail at time of observation
+95|Thunderstorm, slight or moderate, without hail at time of observation
+96|Thunderstorm, slight or moderate, with hail at time of observation
+97|Thunderstorm, heavy, without hail at time of observation
+98|Thunderstorm combined with duststorm or sandstorm at time of observation
+99|Thunderstorm, heavy, with hail at time of observation
