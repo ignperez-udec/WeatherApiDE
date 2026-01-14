@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator # type: ignore
 from airflow.providers.docker.operators.docker import DockerOperator  # type: ignore
+from airflow.utils.task_group import TaskGroup  # type: ignore
 from datetime import datetime, timedelta
 import sys, os
 from datetime import datetime
@@ -42,7 +43,7 @@ def extract_daily_weather(**kwargs):
     logger = get_logger(name='daily_weather_etl')
 
     ti = kwargs['ti']
-    locations = ti.xcom_pull(task_ids='extract_locations')
+    locations = ti.xcom_pull(task_ids='extraction_data_group.extract_locations')
 
     logger.info('Extracting daily weather data from last updated date of each location...')
     weather_daily_list_path = get_daily_weather(locations, logger)
@@ -53,7 +54,7 @@ def load_daily_weather(**kwargs):
     logger = get_logger(name='daily_weather_etl')
 
     ti = kwargs['ti']
-    weather_daily_list_path = ti.xcom_pull(task_ids='extract_daily_weather')
+    weather_daily_list_path = ti.xcom_pull(task_ids='extraction_data_group.extract_daily_weather')
 
     logger.info('Loading daily weather data to database...')
     load_weather_to_db(weather_daily_list_path, logger)
@@ -68,9 +69,17 @@ def extract_last_date(**kwargs):
     print(last_date['date'].sort_values(ascending=True)[0])
     return last_date['date'].sort_values(ascending=True)[0]
 
+def log_koppen_model_spark(**kwargs):
+    logger = get_logger(name='daily_weather_etl')
+    logger.info('Running koppen model with spark...')
+
 def log_dbt_run_fact_weather(**kwargs):
     logger = get_logger(name='daily_weather_etl')
     logger.info('Running dbt fact_weather model...')
+
+def log_dbt_run_fact_koppen_model(**kwargs):
+    logger = get_logger(name='daily_weather_etl')
+    logger.info('Running dbt fact_koppen_model...')
 
 def log_dbt_test(**kwargs):
     logger = get_logger(name='daily_weather_etl')
@@ -129,81 +138,156 @@ with DAG(
         on_failure_callback=log_failure
     )
 
-    extract_locations_task = PythonOperator(
-        task_id='extract_locations',
-        python_callable=extract_locations,
-        on_failure_callback=log_failure
-    )
+    with TaskGroup("extraction_data_group") as extraction_data_group:
+        extract_locations_task = PythonOperator(
+            task_id='extract_locations',
+            python_callable=extract_locations,
+            on_failure_callback=log_failure
+        )
 
-    extract_daily_weather_task = PythonOperator(
-        task_id='extract_daily_weather',
-        python_callable=extract_daily_weather,
-        on_failure_callback=log_failure
-    )
+        extract_daily_weather_task = PythonOperator(
+            task_id='extract_daily_weather',
+            python_callable=extract_daily_weather,
+            on_failure_callback=log_failure
+        )
 
-    load_daily_weather_task = PythonOperator(
-        task_id='load_daily_weather',
-        python_callable=load_daily_weather,
-        on_failure_callback=log_failure
-    )
+        load_daily_weather_task = PythonOperator(
+            task_id='load_daily_weather',
+            python_callable=load_daily_weather,
+            on_failure_callback=log_failure
+        )
 
-    extract_last_date_task = PythonOperator(
-        task_id='extract_last_date',
-        python_callable=extract_last_date,
-        on_failure_callback=log_failure
-    )
+        extract_last_date_task = PythonOperator(
+            task_id='extract_last_date',
+            python_callable=extract_last_date,
+            on_failure_callback=log_failure
+        )
 
-    log_dbt_run_fact_weather_task = PythonOperator(
-        task_id='log_dbt_run_fact_weather',
-        python_callable=log_dbt_run_fact_weather,
-        on_failure_callback=log_failure
-    )
+        extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> extract_last_date_task
 
-    run_fact_weather_dbt_task = DockerOperator(
-        task_id='run_fact_weather_dbt',
-        image='weatherapide-python:latest',
-        api_version='auto',
-        auto_remove=True,
-        docker_url='unix://var/run/docker.sock',
-        network_mode='weatherapide_de_net',
-        entrypoint="/bin/bash",
-        command='''
-            -c '
-            cd dbt
-            dbt run -s fact_weather --vars "{ \"upsert_from\": \"{{ ti.xcom_pull(task_ids='extract_last_date') }}\" }"
-            '
-        ''',
-        environment={
-            "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
-            **os.environ
-        },
-        mount_tmp_dir=False,
-    )
+    with TaskGroup("koppen_spark_group") as koppen_spark_group:
+        log_koppen_model_spark_task = PythonOperator(
+            task_id='log_koppen_model_spark',
+            python_callable=log_koppen_model_spark,
+            on_failure_callback=log_failure
+        )
 
-    log_dbt_test_task = PythonOperator(
-        task_id='log_dbt_test',
-        python_callable=log_dbt_test,
-        on_failure_callback=log_failure
-    )
+        run_koppen_model_spark_task = DockerOperator(
+            task_id='run_koppen_model_spark',
+            image='weatherapide-python:latest',
+            api_version='auto',
+            auto_remove=True,
+            docker_url='unix://var/run/docker.sock',
+            network_mode='weatherapide_de_net',
+            entrypoint="/bin/bash",
+            command='''
+                -c '
+                /opt/spark/bin/spark-submit \
+                    --master spark://spark-master:7077 \
+                    --deploy-mode client \
+                    --jars /opt/spark/jars/postgresql-42.6.0.jar \
+                    --driver-class-path /opt/spark/jars/postgresql-42.6.0.jar \
+                    /WeatherApiDE/src/silver/koppen_model.py
+                '
+            ''',
+            environment={
+                'JAVA_HOME': '/usr/lib/jvm/java-21-openjdk-amd64',
+                'SPARK_HOME': '/opt/spark',
+                'PYTHONPATH': '/WeatherApiDE/src',
+                **os.environ
+            },
+            mount_tmp_dir=False,
+        )
 
-    test_dbt_task = DockerOperator(
-        task_id='test_dbt',
-        image='weatherapide-python:latest',
-        docker_url='unix://var/run/docker.sock',
-        network_mode='weatherapide_de_net',
-        entrypoint="/bin/bash",
-        command='''
-            -c '
-            cd dbt
-            dbt test
-            '
-        ''',
-        environment={
-            "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
-            **os.environ
-        },
-        mount_tmp_dir=False,
-    )
+        log_koppen_model_spark_task >> run_koppen_model_spark_task
+
+    with TaskGroup("fact_weather_dbt_group") as fact_weather_dbt_group:
+        log_dbt_run_fact_weather_task = PythonOperator(
+            task_id='log_dbt_run_fact_weather',
+            python_callable=log_dbt_run_fact_weather,
+            on_failure_callback=log_failure
+        )
+
+        run_fact_weather_dbt_task = DockerOperator(
+            task_id='run_fact_weather_dbt',
+            image='weatherapide-python:latest',
+            api_version='auto',
+            auto_remove=True,
+            docker_url='unix://var/run/docker.sock',
+            network_mode='weatherapide_de_net',
+            entrypoint="/bin/bash",
+            command='''
+                -c '
+                cd dbt
+                dbt run -s fact_weather --vars "{ \"upsert_from\": \"{{ ti.xcom_pull(task_ids='extraction_data_group.extract_last_date') }}\" }"
+                '
+            ''',
+            environment={
+                "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
+                **os.environ
+            },
+            mount_tmp_dir=False,
+        )
+
+        log_dbt_run_fact_weather_task >> run_fact_weather_dbt_task
+
+    with TaskGroup("fact_koppen_model_dbt_group") as fact_koppen_model_dbt_group:
+        log_dbt_run_fact_koppen_model_task = PythonOperator(
+            task_id='log_dbt_run_fact_koppen_model',
+            python_callable=log_dbt_run_fact_koppen_model,
+            on_failure_callback=log_failure
+        )
+
+        run_fact_koppen_model_dbt_task = DockerOperator(
+            task_id='run_fact_koppen_model_dbt',
+            image='weatherapide-python:latest',
+            api_version='auto',
+            auto_remove=True,
+            docker_url='unix://var/run/docker.sock',
+            network_mode='weatherapide_de_net',
+            entrypoint="/bin/bash",
+            command='''
+                -c '
+                cd dbt
+                dbt run -s fact_koppen_model
+                '
+            ''',
+            environment={
+                "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
+                **os.environ
+            },
+            mount_tmp_dir=False,
+        )
+
+        log_dbt_run_fact_koppen_model_task >> run_fact_koppen_model_dbt_task
+
+    with TaskGroup("dbt_tests_group") as dbt_tests_group:
+        log_dbt_test_task = PythonOperator(
+            task_id='log_dbt_test',
+            python_callable=log_dbt_test,
+            on_failure_callback=log_failure
+        )
+
+        test_dbt_task = DockerOperator(
+            task_id='test_dbt',
+            image='weatherapide-python:latest',
+            docker_url='unix://var/run/docker.sock',
+            network_mode='weatherapide_de_net',
+            entrypoint="/bin/bash",
+            command='''
+                -c '
+                cd dbt
+                dbt test
+                '
+            ''',
+            environment={
+                "DBT_PROFILES_DIR": "/WeatherApiDE/dbt/profiles",
+                **os.environ
+            },
+            mount_tmp_dir=False,
+        )
+
+        log_dbt_test_task >> test_dbt_task
 
     finish_dag_task = PythonOperator(
         task_id='finish_dag',
@@ -211,6 +295,4 @@ with DAG(
         on_failure_callback=log_failure
     )
 
-    init_dag_task >>  extract_locations_task >> extract_daily_weather_task >> load_daily_weather_task >> \
-        extract_last_date_task >> log_dbt_run_fact_weather_task >> run_fact_weather_dbt_task >> test_dbt_task >> \
-            log_dbt_test_task >> finish_dag_task
+    init_dag_task >> extraction_data_group >> koppen_spark_group >> [fact_weather_dbt_group, fact_koppen_model_dbt_group] >> dbt_tests_group >> finish_dag_task
