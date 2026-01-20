@@ -11,6 +11,27 @@ def run_dbt_command(command: str):
 
     return result
 
+def seed_weather_code_wmo(logger: logging.Logger):
+    result_seed = run_dbt_command('seed -s weather_code_wmo')
+    if result_seed.returncode != 0:
+        logger.error(result_seed.stdout)
+        logger.error(result_seed.stderr)
+        raise Exception('Dbt seed failed')
+    
+def seed_koppen_classes(logger: logging.Logger):
+    result_seed = run_dbt_command('seed -s koppen_classes')
+    if result_seed.returncode != 0:
+        logger.error(result_seed.stdout)
+        logger.error(result_seed.stderr)
+        raise Exception('Dbt seed failed')
+    
+def seed_koppen_subclasses(logger: logging.Logger):
+    result_seed = run_dbt_command('seed -s koppen_subclasses')
+    if result_seed.returncode != 0:
+        logger.error(result_seed.stdout)
+        logger.error(result_seed.stderr)
+        raise Exception('Dbt seed failed')
+
 def run_dim_location(logger: logging.Logger):
     result_run = run_dbt_command('run -s dim_locations')
     if result_run.returncode != 0:
@@ -25,6 +46,27 @@ def run_dim_date(logger: logging.Logger):
         logger.error(result_run.stderr)
         raise Exception('Dbt run failed')
     
+def run_dim_weather_code_wmo(logger: logging.Logger):
+    result_run = run_dbt_command('run -s dim_weather_code_wmo')
+    if result_run.returncode != 0:
+        logger.error(result_run.stdout)
+        logger.error(result_run.stderr)
+        raise Exception('Dbt run failed')
+    
+def run_dim_koppen_classes(logger: logging.Logger):
+    result_run = run_dbt_command('run -s dim_koppen_classes')
+    if result_run.returncode != 0:
+        logger.error(result_run.stdout)
+        logger.error(result_run.stderr)
+        raise Exception('Dbt run failed')
+
+def run_dim_koppen_subclasses(logger: logging.Logger):
+    result_run = run_dbt_command('run -s dim_koppen_subclasses')
+    if result_run.returncode != 0:
+        logger.error(result_run.stdout)
+        logger.error(result_run.stderr)
+        raise Exception('Dbt run failed')
+
 def run_fact_weather(logger: logging.Logger, upsert_from: str = None):
     if upsert_from is None:
         result_run = run_dbt_command('run -s fact_weather')
@@ -51,11 +93,29 @@ def run_tests(logger: logging.Logger):
         raise Exception('Dbt test failed')
     
 def run_dbt_gold_scripts(logger: logging.Logger):
+    logger.info('\tSeeding weather_code_wmo')
+    seed_weather_code_wmo(logger)
+
+    logger.info('\tSeeding koppen_classes')
+    seed_koppen_classes(logger)
+
+    logger.info('\tSeeding koppen_subclasses')
+    seed_koppen_subclasses(logger)
+
     logger.info('\tRunning dim_locations')
     run_dim_location(logger)
     
     logger.info('\tRunning dim_date')
     run_dim_date(logger)
+
+    logger.info('\tRunning dim_weather_code_wmo')
+    run_dim_weather_code_wmo(logger)
+
+    logger.info('\tRunning dim_koppen_classes')
+    run_dim_koppen_classes(logger)
+
+    logger.info('\tRunning dim_koppen_subclasses')
+    run_dim_koppen_subclasses(logger)
     
     logger.info('\tRunning fact_weather')
     run_fact_weather(logger)

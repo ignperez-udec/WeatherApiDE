@@ -15,6 +15,27 @@ models:
           - not_null
           - unique
 
+  - name: dim_weather_code_wmo
+    columns:
+      - name: code
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_koppen_classes
+    columns:
+      - name: class
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_koppen_subclasses
+    columns:
+      - name: code
+        tests:
+          - not_null
+          - unique
+
   - name: fact_weather
     columns:
       - name: id
@@ -43,6 +64,12 @@ models:
       - name: precipitation_sum
         tests:
           - not_null
+      - name: weather_code
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_weather_code_wmo')
+              field: code
 
   - name: fact_koppen_model
     columns:
@@ -58,6 +85,12 @@ models:
       - name: koppen_class
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_koppen_classes')
+              field: class
       - name: koppen_subclass
         tests:
           - not_null
+          - relationships:
+              to: ref('dim_koppen_subclasses')
+              field: code

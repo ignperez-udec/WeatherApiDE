@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table "dwh_db"."gold"."koppen_classes" ("class" text,"name" text,"description" text)
+  ;
+    -- dbt seed --
+    
+          insert into "dwh_db"."gold"."koppen_classes" ("class", "name", "description") values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      
+
+;
+  

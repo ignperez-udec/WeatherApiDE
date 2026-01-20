@@ -37,17 +37,17 @@ def koppen_subclass(data: DataFrame) -> DataFrame:
             data['koppen_class'] == 'A', 
             when(
                 data['p_driest'] >= 60, 
-            'f'
+            'Af'
             )
             .when(
                 (data['p_driest'] < 60) &
                 (data['p_driest'] >= 100 - data['p'] / 25),
-            'm'
+            'Am'
             )
             .when(
                 (data['p_driest'] < 60) &
                 (data['p_driest'] < 100 - data['p'] / 25), 
-            'w'
+            'Aw'
             )
         )
         .when(
@@ -55,24 +55,24 @@ def koppen_subclass(data: DataFrame) -> DataFrame:
             when(
                 (data['p'] < data['p_threshold'] / 2) &
                 (data['t'] >= 18),
-            'Wh'
+            'BWh'
             )
             .when(
                 (data['p'] < data['p_threshold'] / 2) &
                 (data['t'] < 18),
-            'Wk'
+            'BWk'
             )
             .when(
                 (data['p_threshold'] / 2 <= data['p']) & 
                 (data['p'] < data['p_threshold']) &
                 (data['t'] >= 18),
-            'Sh'
+            'BSh'
             )
             .when(
                 (data['p_threshold'] / 2 <= data['p']) & 
                 (data['p'] < data['p_threshold']) &
                 (data['t'] < 18),
-            'Sk'
+            'BSk'
             )
         )
         .when(
@@ -81,52 +81,52 @@ def koppen_subclass(data: DataFrame) -> DataFrame:
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3) &
                 (data['t_max'] >= 22),
-            'sa'
+            'Csa'
             )
             .when(
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3) &
                 (data['t_max'] < 22) &
                 (data['t_mon10'] >= 4),
-            'sb'
+            'Csb'
             )
             .when(
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3) &
                 (data['t_mon10'] >= 1) &
                 (data['t_mon10'] < 4),
-            'sc'
+            'Csc'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10) &
                 (data['t_max'] >= 22),
-            'wa'
+            'Cwa'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10) &
                 (data['t_max'] < 22) &
                 (data['t_mon10'] >= 4),
-            'wb'
+            'Cwb'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10) &
                 (data['t_mon10'] >= 1) &
                 (data['t_mon10'] < 4),
-            'wc'
+            'Cwc'
             )
             .when(
                 (data['t_max'] >= 22),
-            'fa'
+            'Cfa'
             )
             .when(
                 (data['t_max'] < 22) &
                 (data['t_mon10'] >= 4),
-            'fb'
+            'Cfb'
             )
             .when(
                 (data['t_mon10'] >= 1) &
                 (data['t_mon10'] < 4),
-            'fc'
+            'Cfc'
             )
         )
         .when(
@@ -135,71 +135,71 @@ def koppen_subclass(data: DataFrame) -> DataFrame:
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3) &
                 (data['t_max'] >= 22),
-            'sa'
+            'Dsa'
             )
             .when(
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3) &
                 (data['t_max'] < 22) &
                 (data['t_mon10'] >= 4),
-            'sb'
+            'Dsb'
             )
             .when(
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3) &
                 (data['t_min'] < -38),
-            'sd'
+            'Dsd'
             )
             .when(
                 (data['p_summer_driest'] < 40) &
                 (data['p_summer_driest'] < data['p_winter_wettest'] / 3),
-            'sc'
+            'Dsc'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10) &
                 (data['t_max'] >= 22),
-            'wa'
+            'Dwa'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10) &
                 (data['t_max'] < 22) &
                 (data['t_mon10'] >= 4),
-            'wb'
+            'Dwb'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10) &
                 (data['t_min'] < -38),
-            'wd'
+            'Dwd'
             )
             .when(
                 (data['p_winter_driest'] < data['p_summer_wettest'] / 10),
-            'wc'
+            'Dwc'
             )
             .when(
                 (data['t_max'] >= 22),
-            'fa'
+            'Dfa'
             )
             .when(
                 (data['t_max'] < 22) &
                 (data['t_mon10'] >= 4),
-            'fb'
+            'Dfb'
             )
             .when(
                 (data['t_min'] < -38),
-            'fd'
+            'Dfd'
             )
-            .otherwise('fc')
+            .otherwise('Dfc')
         )
         .when(
             data['koppen_class'] == 'E',
             when(
                 (data['t_max'] > 0) &
                 (data['t_max'] <= 10),
-                'T'
+                'ET'
             )
             .when(
                 data['t_max'] <= 0,
-                'F'
+                'EF'
             )
         )
     )
